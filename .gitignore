@@ -35,6 +35,10 @@
 yarn-debug.log*
 .yarn-integrity
 
+## Environment normalization:
+/.bundle
+/vendor/bundle
+/vendor/bin
 
 # Ignore application configuration
 /config/application.yml
