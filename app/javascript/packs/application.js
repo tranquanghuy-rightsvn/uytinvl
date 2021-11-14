@@ -14,6 +14,7 @@ ActiveStorage.start()
 
 require('jquery')
 require("bootstrap")
+require("packs/index")
 import "../stylesheets/application";
 document.addEventListener("turbolinks:load", function() {
     $(function () {
@@ -28,4 +29,3 @@ var myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', function () {
   myInput.focus()
 })
-
