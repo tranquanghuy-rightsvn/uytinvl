@@ -1,0 +1,5 @@
+$("#error-message-signup").html("<%= j render 'shared/error_messages', resource: @user %>");
+$("#error-message-signup").addClass("alert alert-danger");
+<% @user.errors.each do |error| %>
+  $(".signup-form .field input#user_" + "<%= error.attribute.to_s %>").css("border-color", "red");
+<% end %>

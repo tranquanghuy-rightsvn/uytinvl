@@ -1,0 +1,103 @@
+.login-form{
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.login-form h2{
+  color: #009999;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.field{
+  margin-top: 20px;
+}
+.field input{
+  padding: 7.5px 15px;
+  width: 100%;
+  border: 1px solid #cccccc;
+  outline: none;
+  border-radius: 10px;
+}
+.actions{
+  position: relative;
+}
+.actions input{
+  padding: 7.5px 15px;
+  border-radius: 10px;
+  background-color: #009999;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 0;
+}
+.signup-form{
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 15px;
+  /*border: 2px dotted #cccccc;*/
+  border-radius: 10px;
+}
+.signup-form h2{
+  color: #009999;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+input:hover{
+  border-color: #B0E0E6;
+  border-width: 2px;
+}
+
+.mg-r{
+  margin-right:  20px;
+}
+
+.nav-item .session{
+  color: black;
+  text-decoration-line: none;
+  cursor: pointer;
+}
+
+.nav-item .session:hover{
+  color: #155dc7;
+}
+
+
+.field input:hover{
+  border: 1px solid;
+}
+
+.border-red {
+  border-color: red;
+}
+
+.alert.alert-danger {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 0;
+  font-size: 13px;
+}
+
+.center {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.signup-click:hover {
+  color: #155dc7;
+  cursor: pointer;
+}
+
+.signin-click:hover {
+  color: #155dc7;
+  cursor: pointer;
+}
+
+#error_explanation ul{
+  margin-bottom: 0;
+}

@@ -1,22 +1,23 @@
-<div class="modal fade" id="modalsignup" tabindex="-1" aria-labelledby="modalsignupLabel" aria-hidden="true">
+<div class="modal fade" id="modal-signup" tabindex="-1" aria-labelledby="modalsignupLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div id="error-message-signup"></div>
         <% if current_user.blank? %>
-          <div class="sign-form">
-            <h2>Sign up</h2>
+          <div class="signup-form">
+            <h2>Đăng ký tài khoản mới</h2>
 
-            <%= form_for(@user, url: user_registration_path) do |f| %>
+            <%= form_for(@user, url: user_registration_path, remote: true) do |f| %>
               <%= render "devise/shared/error_messages", resource: @user %>
               <div class="field">
-                <%= f.label :email %><br/>
+                <%= f.label :email, "Email:" %><br/>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
               </div>
 
               <div class="field">
-                <%= f.label :password %>
+                <%= f.label :password, "Mật khẩu:" %>
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
@@ -24,13 +25,15 @@
               </div>
 
               <div class="field">
-                <%= f.label :password_confirmation %><br />
+                <%= f.label :password_confirmation, "Xác nhận mật khẩu:" %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
               </div>
               </br >
               <div class="actions">
-                <%= f.submit "Sign up" %>
+                <%= f.submit "Đăng ký" %>
               </div>
+
+              <div class="center"> Đã có tài khoản? <span class="signin-click"> Đăng nhập ngay</span> </div>
             <% end %>
           </div>
         <% end %>

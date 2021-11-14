@@ -8,14 +8,12 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       	<% if user_signed_in? %>
 	        <li class="nav-item">
-	          <%= link_to "Sign out", destroy_user_session_path, method: :delete,class:"nav-link"%>
+	          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link"%>
 	        </li>
         <% else %>
 	        <li class="nav-item mg-r">
-	        	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Log in</button>
-	        </li>
-	        <li class="nav-item mg-r">
-	        	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalsignup" data-bs-whatever="@getbootstrap">Sign up</button>
+	        	<a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap">Đăng nhập</a> /
+            <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signup" data-bs-whatever="@getbootstrap">Đăng ký</a>
 	        </li>
 	    	<% end %>
       </ul>
