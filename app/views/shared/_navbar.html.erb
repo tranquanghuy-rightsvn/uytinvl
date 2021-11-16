@@ -1,17 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse navbar-right">
+  <div class="container">
+    <a class="navbar-brand" href="#">Uytinvl</a>
+    <div class="navbar-right">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       	<% if user_signed_in? %>
-	        <li class="nav-item">
-	          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-link"%>
+	        <li class="">
+            <div class="item-account"><%= current_user.name[0].upcase %></div>
 	        </li>
         <% else %>
-	        <li class="nav-item mg-r">
+	        <li class="mg-r">
 	        	<a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap">Đăng nhập</a> /
             <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signup" data-bs-whatever="@getbootstrap">Đăng ký</a>
 	        </li>
@@ -20,3 +17,20 @@
     </div>
   </div>
 </nav>
+
+<% if user_signed_in? %>
+  <div class="quote"></div>
+  <div class="quotes"></div>
+  <div id="card-signin">
+      <p class="signin-as"><b>
+      <%= "@" + current_user.name.truncate(20) %></b></p>
+      <hr />
+      <div class="card-item">Quản lý tài khoản</div>
+      <div class="card-item">Viết bài mới</div>
+      <div class="card-item">Cài đặt</div>
+      <div class="card-item">Trợ giúp</div>
+      <hr />
+      <%= link_to "<div class='card-item'>Đăng xuất</div>".html_safe, destroy_user_session_path, method: :delete %>
+  </div>
+<% end %>
+
