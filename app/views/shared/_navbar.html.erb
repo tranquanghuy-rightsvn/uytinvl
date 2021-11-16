@@ -1,36 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">Uytinvl</a>
+    <a class="navbar-brand" href="#"> Uytinvl</a>
     <div class="navbar-right">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      	<% if user_signed_in? %>
-	        <li class="">
+      <% if user_signed_in? %>
+        <div class="dropdown">
+          <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="item-account"><%= current_user.name[0].upcase %></div>
-	        </li>
-        <% else %>
-	        <li class="mg-r">
-	        	<a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap">Đăng nhập</a> /
-            <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signup" data-bs-whatever="@getbootstrap">Đăng ký</a>
-	        </li>
-	    	<% end %>
-      </ul>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end arrow_box" aria-labelledby="navbarDropdown">
+            <li><p class="dropdown-item-custom"><%= "@" + current_user.name.truncate(20) %></p></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
+            <li><a class="dropdown-item" href="#">Viết bài mới</a></li>
+            <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+            <li><a class="dropdown-item" href="#">Giúp đỡ</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Đăng xuất", destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
+          </ul>
+        </div>
+      <% else %>
+        <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap">Đăng nhập</a> /
+        <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signup" data-bs-whatever="@getbootstrap">Đăng ký</a>
+      <% end %>
     </div>
   </div>
 </nav>
-
-<% if user_signed_in? %>
-  <div class="quote"></div>
-  <div class="quotes"></div>
-  <div id="card-signin">
-      <p class="signin-as"><b>
-      <%= "@" + current_user.name.truncate(20) %></b></p>
-      <hr />
-      <div class="card-item">Quản lý tài khoản</div>
-      <div class="card-item">Viết bài mới</div>
-      <div class="card-item">Cài đặt</div>
-      <div class="card-item">Trợ giúp</div>
-      <hr />
-      <%= link_to "<div class='card-item'>Đăng xuất</div>".html_safe, destroy_user_session_path, method: :delete %>
-  </div>
-<% end %>
-
