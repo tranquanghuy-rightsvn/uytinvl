@@ -10,15 +10,15 @@
         <% if current_user.blank? %>
           <div class="login-form">
             <h2>Đăng nhập</h2>
-            <%= form_for(@user, url: new_user_session_path, remote: true) do |f| %>
+            <%= form_for(@user, url: new_user_session_path, remote: true, html: { id: :user_signin } ) do |f| %>
               <div class="field">
                 <%= f.label :email, "Email:" %><br/>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %> 
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", id: :user_signin_email %>
               </div>
 
               <div class="field">
                 <%= f.label :password, "Mật khẩu:" %><br />
-                <%= f.password_field :password, autocomplete: "current-password" %>
+                <%= f.password_field :password, autocomplete: "current-password",  id: :user_signin_password %>
               </div>
               </br >
               <div class="actions">

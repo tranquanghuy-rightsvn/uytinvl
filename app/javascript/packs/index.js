@@ -1,16 +1,5 @@
 $(document).ready(function() {
   $("#error-message-signin").hide();
-  $("#card-signin").hide();
-  $(".quote").hide();
-  $(".quotes").hide();
-  var openCardSignin = false;
-
-  $(window).click(function() {
-    $("#card-signin").hide();
-    $(".quote").hide();
-    $(".quotes").hide();
-    openCardSignin = false;
-  });
 
   $(".login-form .field input").focus(function(){
     $(".login-form .field input").css("border-color", "black");
@@ -39,23 +28,4 @@ $(document).ready(function() {
     $("#error-message-signin").hide();
     $(".login-form .field input").css("border-color", "black");
   }); 
-
-  $(".item-account").click(function(event){
-    openCardSignin = !openCardSignin
-    if(openCardSignin){
-      $("#card-signin").show();
-      $(".quote").show();
-      $(".quotes").show();
-    }else{
-      $("#card-signin").hide();
-      $(".quote").hide();
-      $(".quotes").hide();
-    }
-    event.stopPropagation();
-  });
-
-  $(".card-item").click(function(){
-    console.log("zxc");
-    openCardSignin  = false;
-  });
 });

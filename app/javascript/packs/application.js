@@ -16,16 +16,3 @@ require('jquery')
 require("bootstrap")
 require("packs/index")
 import "../stylesheets/application";
-document.addEventListener("turbolinks:load", function() {
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-        $('[data-toggle="popover"]').popover()
-    })
-})
-
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
