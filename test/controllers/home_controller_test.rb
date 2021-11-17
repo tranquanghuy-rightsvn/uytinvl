@@ -11,7 +11,8 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
       post user_registration_path, params: {
         user: {
           email: "abcxyz@gmail.com",
-          password: "123123"
+          password: "123123",
+          name: "name test"
         }
       }
     end
@@ -19,13 +20,13 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
 
   test "should login success" do
-    User.create! email: "abcxyz@gmail.com", password: "123123"
+    User.create! email: "abcxyz@gmail.com", password: "123123", name: "name test"
     post new_user_session_path, params: {
       user: {
         email: "abcxyz@gmail.com",
         password: "123123"
       }
     }
-    assert_response :success
+    assert_response :found
   end
 end
