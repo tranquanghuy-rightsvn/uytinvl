@@ -6,5 +6,4 @@
 #
 one: 
   email: "one@mail.com"
-two: 
-  email: "two@gmail.com"
+  name: "One"
