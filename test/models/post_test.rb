@@ -4,10 +4,11 @@ class PostTest < ActiveSupport::TestCase
   setup do
     @user = users(:one)
     @category = categories(:one)
+    @channel = channels(:one)
   end
 
   test "should be valid" do
-    post = @user.posts.new(title: "Title test", content: "Content test", category: @category)
+    post = @user.posts.new(title: "Title test", content: "Content test", category: @category, channel: @channel)
 
     assert post.valid?
   end

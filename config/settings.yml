@@ -1,3 +1,8 @@
 user:
   length_name:
     max: 30
+tag:
+  limit: 5
+channel:
+  length_name:
+    max: 50
