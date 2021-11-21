@@ -10,6 +10,8 @@ CATEGORY = ["Phap luat", "Doi song", "Bong da", "Giai tri"]
 CHANNEL = ["Sang vlog", "Khoa Pug", "Toidicodedao", "Khoai lang thang"]
 
 user = User.create! email: "bacluong@gmail.com", password: "123123", name: "Bac xa"
+user_2 = User.create! email: "quanghuy@gmail.com", password: "123123", name: "Quang Huy"
+user_3 = User.create! email: "thuytien@gmail.com", password: "123123", name: "Thuy Tien"
 
 
 4.times do |n|
@@ -20,6 +22,9 @@ end
 4.times do |n|
 	user.channels.create! name: CHANNEL[n]
 end
+
+Channel.first.users_channels.create! user_id: user_2.id
+Channel.first.users_channels.create! user_id: user_3.id
 
 40.times do |n|
 	user.posts.create title: "Title #{n+1}", content: "Content #{n+1}",
