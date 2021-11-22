@@ -8,6 +8,7 @@ ruby "3.0.0"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "config"
 gem "devise"
+gem "rails-i18n"
 gem "figaro"
 gem "jbuilder", "~> 2.7"
 gem "mysql2", "~> 0.5"
