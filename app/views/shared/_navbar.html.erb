@@ -11,7 +11,7 @@
             <li><p class="dropdown-item-custom"><%= "@" + current_user.name.truncate(20) %></p></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
-            <li><a class="dropdown-item" href="#">Viết bài mới</a></li>
+            <li><%= link_to "Viết bài mới", new_post_path, class: "dropdown-item" %></li>
             <li><a class="dropdown-item" href="#">Cài đặt</a></li>
             <li><a class="dropdown-item" href="#">Giúp đỡ</a></li>
             <li><hr class="dropdown-divider"></li>
