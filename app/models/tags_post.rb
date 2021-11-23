@@ -10,6 +10,6 @@ class TagsPost < ApplicationRecord
     return if post.blank?
     return unless post.tags.count >= Settings.tag.limit
 
-    errors.add(:post_id, "Mỗi bài post chỉ có tối đa 5 thẻ tag")
+    errors.add(:post_id, I18n.t("errors.maximum_tag_limit"))
   end
 end

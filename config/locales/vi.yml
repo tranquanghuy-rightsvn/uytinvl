@@ -1,0 +1,42 @@
+vi:
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+  home:
+    index:
+      title: "tiêu đề"
+      content: "nội dung"
+      category: "thể loại"
+      
+  layouts:
+    loginform:
+      wrong_account_or_password: "Sai tài khoản hoặc mật khẩu"
+      login: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      you_has_no_account: "Bạn chưa có tài khoản?"
+      register_now: "Đăng ký ngay"
+
+    signup:
+      register_a_new_account: "Đăng ký tài khoản mới"
+      already_have_an_account: "Đã có tài khoản?"
+      login_now: "Đăng nhập ngay"
+      register: "Đăng ký"
+
+    navbar:
+      manage: "Quản lý tài khoản"
+      create_post: "Viết bài mới"
+      setting: "Cài đặt"
+      help: "Giúp đỡ"
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      logout: "Đăng xuất"
+
+  errors:
+    maximum_tag_limit: "Mỗi bài post chỉ có tối đa 5 thẻ tag"

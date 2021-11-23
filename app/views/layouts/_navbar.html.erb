@@ -10,17 +10,17 @@
           <ul class="dropdown-menu dropdown-menu-end arrow_box" aria-labelledby="navbarDropdown">
             <li><p class="dropdown-item-custom"><%= "@" + current_user.name.truncate(20) %></p></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
-            <li><%= link_to "Viết bài mới", new_post_path, class: "dropdown-item" %></li>
-            <li><a class="dropdown-item" href="#">Cài đặt</a></li>
-            <li><a class="dropdown-item" href="#">Giúp đỡ</a></li>
+            <li><a class="dropdown-item" href="#"><%= t(".manage") %></a></li>
+            <li><%= link_to t(".create_post"), new_post_path, class: "dropdown-item" %></li>
+            <li><a class="dropdown-item" href="#"><%= t(".setting") %></a></li>
+            <li><a class="dropdown-item" href="#"><%= t(".help") %></a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Đăng xuất", destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
+            <li><%= link_to t(".logout"), destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
           </ul>
         </div>
       <% else %>
-        <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap">Đăng nhập</a> /
-        <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signup" data-bs-whatever="@getbootstrap">Đăng ký</a>
+        <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap"><%= t(".login") %></a> /
+        <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signup" data-bs-whatever="@getbootstrap"><%= t(".register") %></a>
       <% end %>
     </div>
   </div>

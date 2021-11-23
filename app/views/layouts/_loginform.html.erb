@@ -5,26 +5,26 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div id="error-message-signin" class="alert alert-danger">
-        Sai tài khoản hoặc mật khẩu!
+        <%= t(".wrong_account_or_password") %>
       </div>
         <% if current_user.blank? %>
           <div class="login-form">
-            <h2>Đăng nhập</h2>
+            <h2><%= t(".login") %></h2>
             <%= form_for(@user, url: new_user_session_path, remote: true, html: { id: :user_signin } ) do |f| %>
               <div class="field">
-                <%= f.label :email, "Email:" %><br/>
+                <%= f.label :email %><br/>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", id: :user_signin_email %>
               </div>
 
               <div class="field">
-                <%= f.label :password, "Mật khẩu:" %><br />
+                <%= f.label :password %><br />
                 <%= f.password_field :password, autocomplete: "current-password",  id: :user_signin_password %>
               </div>
               </br >
               <div class="actions">
-                <%= f.submit "Đăng nhập" %>
+                <%= f.submit t(".login") %>
               </div>
-              <p class="center"> Bạn chưa có tài khoản? <span class="signup-click">Đăng ký ngay </span></p>
+              <p class="center"> <%= t(".you_has_no_account") %><span class="signup-click"><%= t(".register_now") %></span></p>
             <% end %>
           </div>
         <% end %>
