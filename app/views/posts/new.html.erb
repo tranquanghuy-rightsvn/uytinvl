@@ -1,5 +1,10 @@
 <div class="container">
   <%= form_for(@post, url: posts_path) do |form| %>
+    <div>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
     <div class="form-group">
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control" %>

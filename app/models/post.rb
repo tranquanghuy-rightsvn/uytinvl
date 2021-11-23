@@ -1,11 +1,15 @@
 class Post < ApplicationRecord
-	belongs_to :user
-	belongs_to :category
-	belongs_to :channel, optional: true
+  mount_uploader :image, PostImageUploader
 
-	has_many :tags_posts
-	has_many :tags, through: :tags_posts
+  belongs_to :user
+  belongs_to :category
+  belongs_to :channel, optional: true
 
-	validates :title, presence: true
-	validates :content, presence: true
+  has_many :tags_posts
+  has_many :tags, through: :tags_posts
+
+  validates :title, presence: true
+  validates :content, presence: true
+
+  validates :image, presence: true
 end

@@ -15,12 +15,12 @@ class ChannelTest < ActiveSupport::TestCase
     channel = @user.channels.new
 
     assert_not channel.valid?
-    assert_includes channel.errors[:name], "can't be blank"
+    assert_includes channel.errors[:name], "không được để trống"
   end
 
   test "should validate length name" do
     channel = Channel.new(name: "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890")
     assert_not channel.valid?
-    assert_includes channel.errors[:name], "is too long (maximum is 50 characters)"
+    assert_includes channel.errors[:name], "quá dài(tối đa 50 kí tự)"
   end
 end

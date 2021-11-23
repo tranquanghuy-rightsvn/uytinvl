@@ -11,6 +11,6 @@ class TagTest < ActiveSupport::TestCase
     tag = Tag.new
 
     assert_not tag.valid?
-    assert_includes tag.errors[:name], "can't be blank"
+    assert_includes tag.errors[:name], "không được để trống"
   end
 end

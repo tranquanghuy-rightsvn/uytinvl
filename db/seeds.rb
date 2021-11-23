@@ -27,6 +27,6 @@ Channel.first.users_channels.create! user_id: user_2.id
 Channel.first.users_channels.create! user_id: user_3.id
 
 40.times do |n|
-	user.posts.create title: "Title #{n+1}", content: "Content #{n+1}",
-	category: Category.all.sample, channel_id: (Channel.ids << nil).sample
+  user.posts.create title: "Title #{n+1}", content: "Content #{n+1}", image: File.new(Rails.root.join("public/sample.jpg")),
+    category: Category.all.sample, channel_id: (Channel.ids << nil).sample
 end

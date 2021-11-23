@@ -11,14 +11,14 @@ class UserTest < ActiveSupport::TestCase
     user = User.new
 
     assert_not user.valid?
-    assert_includes user.errors[:name], "can't be blank"
-    assert_includes user.errors[:email], "can't be blank"
-    assert_includes user.errors[:password], "can't be blank"
+    assert_includes user.errors[:name], "không được để trống"
+    assert_includes user.errors[:email], "không được để trống"
+    assert_includes user.errors[:password], "không được để trống"
   end
 
   test "should validate length name" do
     user = User.new(name: "1234567890123456789012345678901", email: "test@gmail.com", password: "123123")
     assert_not user.valid?
-    assert_includes user.errors[:name], "is too long (maximum is 30 characters)"
+    assert_includes user.errors[:name], "quá dài(tối đa 30 kí tự)"
   end
 end
