@@ -8,11 +8,32 @@ vi:
         email: "Email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+      channel:
+        owner: "Chủ kênh"
+        name: "Tên"
+      post:
+        title: "Tiêu đề"
+        content: "Nội dung"
+        image: "Hình ảnh"
+        category: "Thể loại"
+        user: "Người viết"
+        channel: "Kênh"
+      category:
+        name: "Tên"
+      tag:
+        name: "Tên"
+      tags_post:
+        tag: "Thẻ tag"
+        post: "Bài viết"
+      users_channel:
+        user: "Thành viên"
+        channel: "Kênh"
+
   home:
     index:
-      title: "tiêu đề"
-      content: "nội dung"
-      category: "thể loại"
+      title: "Tiêu đề"
+      content: "Nội dung"
+      category: "Thể loại"
       
   layouts:
     loginform:

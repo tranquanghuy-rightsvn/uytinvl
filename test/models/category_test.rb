@@ -12,6 +12,6 @@ class CategoryTest < ActiveSupport::TestCase
     category = Category.new
 
     assert_not category.valid?
-    assert_includes category.errors[:name], "can't be blank"
+    assert_includes category.errors[:name], "không được để trống"
   end
 end

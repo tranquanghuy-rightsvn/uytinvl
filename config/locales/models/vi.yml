@@ -1,0 +1,63 @@
+vi:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "không được để trống"
+              too_long: "quá dài(tối đa %{count} kí tự)"
+            email:
+              blank: "không được để trống"
+              taken: "đã tồn tại"
+              invalid: "không hợp lệ"
+            password:
+              blank: "không được để trống"
+            password_confirmation:
+              confirmation: "không khớp"              
+
+        post:
+          attributes:
+            title:
+              blank: "không được để trống"
+            content:
+              blank: "không được để trống"
+            image:
+              blank: "không được để trống"
+              invalid: "không hợp lệ"
+            user:
+              required: "phải tồn tại"
+            category:
+              required: "phải tồn tại"
+
+        category:
+          attributes:
+            name:
+              blank: "không được để trống"
+
+        channel:
+          attributes:
+            name:
+              blank: "không được để trống"
+              too_long: "quá dài(tối đa %{count} kí tự)"
+            owner:
+              required: "phải tồn tại"
+
+        tag:
+          attributes:
+            name:
+              blank: "không được để trống"
+
+        tags_post:
+          attributes:
+            tag:
+              required: "không được để trống"
+            post:
+              required: "không được để trống"
+
+        users_channel:
+          attributes:
+            user:
+              required: "không được để trống"
+            channel:
+              required: "không được để trống"
