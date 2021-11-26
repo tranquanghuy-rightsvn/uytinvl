@@ -1,0 +1,14 @@
+<%= form_for(@category, url: url ,method: method) do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>  
+  </br >
+  <div class="button-create">
+    <% if @category.persisted? %>
+      <%= form.submit "Edit category", class: "btn btn-outline-primary" %>
+    <% else %>
+      <%= form.submit "Create category", class: "btn btn-outline-primary" %>
+    <% end %>
+  </div>
+<% end %>

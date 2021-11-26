@@ -1,18 +1,8 @@
-
 <div class="content-wrapper">
   <div class="content-header">
     <div class="container-fluid">
       <div class="container">
-      <%= form_for(@category, url: admin_categories_path) do |form| %>
-        <div class="form-group">
-          <%= form.label :name %>
-          <%= form.text_field :name, class: "form-control" %>
-        </div>  
-        </br >
-        <div class="button-create">
-          <%= form.submit "Create Category", class: "btn btn-outline-primary" %>
-        </div>
-      <% end %>
+      <%= render 'form', url: admin_categories_path, method: :post %>
       </div>
     </div>
   </div>
