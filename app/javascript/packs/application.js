@@ -7,12 +7,18 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "../stylesheets/application";
+import "@fortawesome/fontawesome-free/js/all";
+import 'bootstrap';
+
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
 require('jquery')
 require("bootstrap")
 require("packs/index")
-import "../stylesheets/application";
+require('admin-lte');
+document.addEventListener("turbolinks:load", () => {
+  $('[data-toggle="tooltip"]').tooltip()
+});
