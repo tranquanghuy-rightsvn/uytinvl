@@ -18,43 +18,11 @@
 
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v1</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v2</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./index3.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v3</p>
-              </a>
-            </li>
-          </ul>
+        <li class="nav-item">
+          <%= link_to "<i class='nav-icon fas fa-tachometer-alt'></i><p>Dash board</p>".html_safe,  admin_root_path, class: ["nav-link", is_controller?('admin/home')].compact.join(" ") %>
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Widgets
-              <span class="right badge badge-danger">New</span>
-            </p>
-          </a>
+          <%= link_to "<i class='nav-icon fas fa-th'></i><p>Category</p>".html_safe, admin_categories_path, class: ["nav-link", is_controller?('admin/categories')].compact.join(" ") %>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
@@ -151,17 +119,11 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item ct-item">
-          <div class="nav-link">
-            <i class="fas fa-sign-out-alt"></i>
-            <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
-          </div>
+        <li class="nav-item">
+          <%= link_to "<i class='fas fa-sign-out-alt'></i> Logout".html_safe, destroy_user_session_path, class: "nav-link", method: :delete %>
         </li>
-        <li class="nav-item ct-item">
-          <div class="nav-link">
-            <i class="fas fa-home"></i>
-            <%= link_to t(".go_home"), root_path %>
-          </div>
+        <li class="nav-item">
+          <%= link_to "<i class='fas fa-home'></i> Back to home".html_safe, root_path, class: "nav-link" %>
         </li>
       </ul>
     </nav>

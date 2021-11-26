@@ -1,0 +1,31 @@
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <h1>Categories</h1>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Created at</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.name %></td>
+              <td><%= category.created_at.strftime(Settings.date.format) %></td>
+              <td>
+                <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_admin_category_path(category) %> &emsp;
+                <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to "<button class= 'btn btn-success'>Create category</button>".html_safe, new_admin_category_path %>
+    </div>
+  </div>
+</div>
