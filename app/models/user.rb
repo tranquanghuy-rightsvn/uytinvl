@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, length: { maximum: Settings.user.length_name.max }
+  enum role: { user: 0, admin: 1 }
 end

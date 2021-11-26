@@ -58,6 +58,11 @@ vi:
       login: "Đăng nhập"
       register: "Đăng ký"
       logout: "Đăng xuất"
+      manage: "Quản lý"
+
+    admin:
+      sidebar:
+        go_home: "Quay về trang chủ"
 
   errors:
     maximum_tag_limit: "Mỗi bài post chỉ có tối đa 5 thẻ tag"
