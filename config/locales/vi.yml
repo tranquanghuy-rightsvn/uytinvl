@@ -14,7 +14,7 @@ vi:
       post:
         title: "Tiêu đề"
         content: "Nội dung"
-        image: "Hình ảnh"
+        image: "Ảnh đại diện"
         category: "Thể loại"
         user: "Người viết"
         channel: "Kênh"
@@ -34,6 +34,11 @@ vi:
       title: "Tiêu đề"
       content: "Nội dung"
       category: "Thể loại"
+
+  posts:
+    form:
+      edit_post: "Cập nhật"
+      create_post: "Tạo post"
       
   layouts:
     loginform:
@@ -63,6 +68,7 @@ vi:
     admin:
       sidebar:
         go_home: "Quay về trang chủ"
+
 
   errors:
     maximum_tag_limit: "Mỗi bài post chỉ có tối đa 5 thẻ tag"

@@ -11,14 +11,15 @@ import "../stylesheets/application";
 import "@fortawesome/fontawesome-free/js/all";
 import 'bootstrap';
 
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require('jquery')
-require("bootstrap")
 require("packs/index")
 require('admin-lte');
+require("trix")
+require("@rails/actiontext")
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
 });
+

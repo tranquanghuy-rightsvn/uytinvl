@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th><%= t(".title") %></th>
-      <th><%= t(".content") %></th>
       <th><%= t(".category") %></th>
     </tr>
   </thead>
@@ -13,7 +12,6 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
         <td><%= post.category.name %></td>
       </tr>
     <% end %>

@@ -28,4 +28,16 @@ $(document).ready(function() {
     $("#error-message-signin").hide();
     $(".login-form .field input").css("border-color", "black");
   }); 
+
+  $('#inputImagePost').change(function(){
+      const file = this.files[0];
+      if (file){
+        let reader = new FileReader();
+        reader.onload = function(event){
+          console.log(event.target.result);
+          $('#imagePost').attr('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
 });
