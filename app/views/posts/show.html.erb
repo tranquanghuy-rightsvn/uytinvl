@@ -1,15 +1,35 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="container">
+  <div class="body-post">
+    <% if current_user&.id == @post.user_id %>
+      <%= link_to "<button class='btn btn-primary btn-edit-post'> <i class='fas fa-edit'></i> </button>".html_safe,
+        edit_post_path(@post) %> 
+    <% end %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+    <div class="category"><p><%= @post.category.name %></p></div>
+    <h1>
+      <%= @post.title %>
+    </h1>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category.name %>
-</p>
-<%= image_tag @post.image_url %>
+    <div class="author-post">
+      <div class="left">
+        <img src="https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg" />
+      </div>
+
+      <div class="mid">
+        <p><%= @post.user.name %> | 1.k followers</p>
+        <button class="btn btn-success" title="huỷ theo dõi"><i class="fas fa-check"></i> Đang theo dõi</button>
+      </div>
+
+      <div class="right">
+        <p><i><%= @post.created_at.strftime(Settings.date.format) %></i></p>
+      </div>
+    </div>
+
+    <div class="clear-both">
+    </div>
+
+    <div class="content-post">
+      <%= @post.content %>
+    </div>
+  </div>
+</div>
