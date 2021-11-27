@@ -6,3 +6,5 @@ tag:
 channel:
   length_name:
     max: 50
+date:
+  format: "%I:%M %d/%m/%Y"
