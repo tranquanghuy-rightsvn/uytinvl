@@ -8,3 +8,5 @@ channel:
     max: 50
 date:
   format: "%I:%M %d-%m-%Y"
+rich_text_content:
+  length_default: 37

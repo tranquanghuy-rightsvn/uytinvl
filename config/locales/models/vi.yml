@@ -20,7 +20,7 @@ vi:
           attributes:
             title:
               blank: "không được để trống"
-            content:
+            rich_text_content:
               blank: "không được để trống"
             image:
               blank: "không được để trống"
