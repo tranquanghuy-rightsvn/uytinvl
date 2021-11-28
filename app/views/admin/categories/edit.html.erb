@@ -2,16 +2,7 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="container">
-      <%= form_for(@category, url: admin_category_path ,method: :patch) do |form| %>
-        <div class="form-group">
-          <%= form.label :name %>
-          <%= form.text_field :name, class: "form-control" %>
-        </div>  
-        </br >
-        <div class="button-create">
-          <%= form.submit "Update Category", class: "btn btn-outline-primary" %>
-        </div>
-      <% end %>
+      <%= render "form", url: admin_category_path, method: :patch %>
       </div>
     </div>
   </div>
