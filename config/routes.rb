@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root to: "home#index"
-  resources :posts, only: %i[new create show edit update]
+  resources :posts, only: %i[new create show edit update index]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

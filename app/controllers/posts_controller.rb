@@ -1,13 +1,18 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i(show edit update)
 
+  def index
+    redirect_to root_path
+  end
+
   def new
     @post = Post.new
   end
 
   def create
     @post = current_user.posts.new(post_params)
-    if @post.save!
+
+    if @post.save
       redirect_to @post
     else
       render :new
@@ -19,10 +24,10 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    if @post.update! post_params
+    if @post.update post_params
       redirect_to @post
     else
-      render :new
+      render :edit
     end
   end
 

@@ -10,6 +10,12 @@ class Post < ApplicationRecord
   has_many :tags, through: :tags_posts
 
   validates :title, presence: true
-
   validates :image, presence: true
+  validate :rich_text_content_presence
+
+  def rich_text_content_presence
+    return if rich_text_content.body.to_s.length > Settings.rich_text_content.length_default
+
+    errors.add(:rich_text_content, :blank)
+  end
 end

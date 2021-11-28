@@ -13,7 +13,7 @@ vi:
         name: "Tên"
       post:
         title: "Tiêu đề"
-        content: "Nội dung"
+        rich_text_content: "Nội dung"
         image: "Ảnh đại diện"
         category: "Thể loại"
         user: "Người viết"

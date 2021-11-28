@@ -253,15 +253,15 @@ hr{
   margin-right: 20px;
 }
 
-.date-time-post p{
-  font-size: 16px;
+.right p{
   color: #888;
   margin-bottom: 40px;
 }
 
 .author-post{
   width: 100%;
-  height: 80px;
+  min-height: 100px;
+  padding-bottom: 20px;
 }
 
 .author-post .left{
@@ -331,4 +331,19 @@ hr{
 
 .image-post img{
   width: 300px;
+}
+
+
+.alert.alert-danger {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+#error_messages_post ul li:first-child{
+  padding-top: 8px;
+}
+
+#error_messages_post ul li:last-child{
+  padding-bottom: 8px;
 }
