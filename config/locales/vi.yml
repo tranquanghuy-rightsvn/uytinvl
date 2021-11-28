@@ -64,10 +64,20 @@ vi:
       register: "Đăng ký"
       logout: "Đăng xuất"
       manage: "Quản lý"
+      information: "Thông tin cá nhân"
 
     admin:
       sidebar:
         go_home: "Quay về trang chủ"
+
+  users:
+    information:
+      update: "Cập nhật"
+
+    edit:
+      information: "Thông tin"
+      password: "Mật khẩu"
+      channels: "Channels"
 
 
   errors:
