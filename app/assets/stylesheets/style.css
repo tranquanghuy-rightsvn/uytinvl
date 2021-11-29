@@ -384,6 +384,7 @@ hr{
 .post-box img{
   width: 100%;
   object-fit: cover;
+  margin-bottom: 7px;
 }
 
 .post-box p{
