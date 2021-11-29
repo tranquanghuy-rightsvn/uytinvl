@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+  before_action :check_current_user, except: %i(index show)
   before_action :set_post, only: %i(show edit update)
+  before_action :check_owner, only: %i(edit update)
 
   def index
     redirect_to root_path
@@ -35,10 +37,15 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find_by(id: params[:id])
+    redirect_to root_path unless @post
   end
 
   def post_params
     params.require(:post).permit(:title, :content, :category_id, :image)
+  end
+
+  def check_owner
+    redirect_to root_path unless @post.user_id == current_user.id
   end
 end
 

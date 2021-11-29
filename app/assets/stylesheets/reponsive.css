@@ -1,0 +1,63 @@
+.suggesting .post-box img{
+  height: 50vw;
+}
+
+.suggesting .post-box{
+  margin-bottom: 10px;
+}
+
+.suggesting .post-box-title{
+  height: 60px;
+}
+
+.trending .first-trending img{
+  height: 50vw;
+}
+
+.trending .post-box-title{
+  height: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .suggesting .post-box img{
+    height: 25vw;
+  }
+
+  .suggesting .post-box{
+    margin-bottom: 20px;
+  }
+
+  .trending .post-box img{
+    height: 25vw;
+  }
+
+  .trending .first-trending img{
+    height: 40vw;
+  }
+
+  .suggesting .post-box-title{
+    height: 80px;
+  }
+
+  .trending .post-box-title{
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .suggesting .post-box img{
+    height: 13vw;
+  } 
+
+  .suggesting .post-box{
+    margin-bottom: 40px;
+  }
+
+  .trending .post-box img{
+    height: 13vw;
+  }
+
+  .trending .first-trending img{
+    height: 30vw;
+  }
+}
