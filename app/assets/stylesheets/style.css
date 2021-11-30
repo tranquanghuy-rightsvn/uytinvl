@@ -343,6 +343,14 @@ hr{
   border: none;
 }
 
+.alert.alert-success {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+}
+
 #error_messages_post ul li:first-child{
   padding-top: 8px;
 }
@@ -549,7 +557,26 @@ hr{
 
 .tabcontent{
   display: none;
-  padding: 30px 12px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.alert-success-custom {
+  font-size: 14px;
+  background-color: #198754;
+  color: #ffffff;
+  margin-top: -15px;
+}
+
+.alert-success-custom p{
+  padding: 8px 20px;
+}
+
+#error_messages_user ul li:first-child{
+  padding-top: 8px;
+}
+
+#error_messages_user ul li:last-child{
+  padding-bottom: 8px;
 }

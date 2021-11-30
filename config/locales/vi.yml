@@ -71,7 +71,7 @@ vi:
         go_home: "Quay về trang chủ"
 
   users:
-    information:
+    form_information:
       update: "Cập nhật"
 
     edit:
