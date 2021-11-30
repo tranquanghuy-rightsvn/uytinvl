@@ -112,16 +112,24 @@ hr{
 }
 
 .item-account{
-  width: 25px;
-  height: 25px;
-  background-color: #009999;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   text-align: center;
-  border: 1px solid #009999;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  overflow: hidden;
+  font-size: 24px;
 }
+
+.item-account img{
+  width: 35px;
+  min-height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 #card-signin {
   width: 200px;
   min-height: 200px;
@@ -484,4 +492,55 @@ hr{
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 14px;
+}
+
+.avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  margin: auto;
+}
+
+#my_file{
+  display: none;
+}
+
+.avatar img{
+  width: 200px;
+  min-height: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+.tab{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button{
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover{
+  background-color: #ddd;
+}
+
+.tab button.active{
+  background-color: #ccc;
+}
+
+.tabcontent{
+  display: none;
+  padding: 30px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }

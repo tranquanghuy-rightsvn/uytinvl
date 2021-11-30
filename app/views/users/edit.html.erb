@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col mb-3">
+      <div class="card-body">
+        <div class="tab">
+          <button class="tablinks" onclick="OpenProfile(event, 'information')"><%= t(".information") %></button>
+          <button class="tablinks" onclick="OpenProfile(event, 'password')"><%= t(".password") %></button>
+          <button class="tablinks" onclick="OpenProfile(event, 'channel')"><%= t(".channels") %></button>
+        </div>
+        <%= render "users/information" %>
+
+        <%= render "users/password" %>
+        
+        <%= render "users/channel" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#information").show();
+
+    $(".avatar").click(function() {
+      $("input[id='my_file']").click();
+    });
+
+    $('#my_file').change(function(){
+        const file = this.files[0];
+        if (file){
+          let reader = new FileReader();
+          reader.onload = function(event){
+            $('.avatar-user').attr('src', event.target.result);
+          }
+          reader.readAsDataURL(file);
+        }
+      });
+  });
+
+  function OpenProfile(evt, profile) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(profile).style.display = "block";
+  evt.currentTarget.className += " active";
+  }
+</script>
