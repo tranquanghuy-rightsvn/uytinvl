@@ -1,0 +1,5 @@
+$("#information").html("<%= j render('users/form_information') %>");
+$("#error_messages_post").html("<%= j render('shared/error_messages', resource: current_user) %>");
+<% if current_user.errors.blank? %>
+  $("#success-message").html("<p>Cập nhật thành công</p>");
+<% end %>
