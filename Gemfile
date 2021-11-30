@@ -6,12 +6,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.0"
 
 gem "bootsnap", ">= 1.4.4", require: false
+gem "bootstrap4-kaminari-views"
 gem "carrierwave"
 gem "config"
 gem "devise"
 gem "rails-i18n"
 gem "figaro"
 gem "jbuilder", "~> 2.7"
+gem "kaminari"
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.3", ">= 6.1.3.1"
