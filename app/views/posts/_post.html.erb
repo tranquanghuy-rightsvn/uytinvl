@@ -1,0 +1,10 @@
+<div class="col-12 col-sm-12 col-md-6 col-lg-3">
+  <div class="post-box">
+    <%= link_to post do %>
+      <img src="<%= post.image %>" />
+      <div class="post-box-title">
+        <p><%= post.title %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

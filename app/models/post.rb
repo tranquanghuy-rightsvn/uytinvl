@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :image, presence: true
   validate :rich_text_content_presence
+  scope :newest, -> { order(created_at: :desc) }
 
   def rich_text_content_presence
     return if rich_text_content.body.to_s.length > Settings.rich_text_content.length_default
