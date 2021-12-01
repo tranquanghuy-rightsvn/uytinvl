@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     root to: "home#index"
     resources :categories
   end
+
+  # match '*path', :to => 'application#redirect_to_root_path', via: [:get, :post]
 end
