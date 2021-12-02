@@ -580,3 +580,11 @@ hr{
 #error_messages_user ul li:last-child{
   padding-bottom: 8px;
 }
+
+#error_messages_password ul li:first-child{
+  padding-top: 8px;
+}
+
+#error_messages_password ul li:last-child{
+  padding-bottom: 8px;
+}

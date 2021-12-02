@@ -8,6 +8,7 @@ vi:
         email: "Email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+        current_password: "Mật khẩu hiện tại"
       channel:
         owner: "Chủ kênh"
         name: "Tên"
