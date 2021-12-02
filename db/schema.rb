@@ -94,12 +94,6 @@ ActiveRecord::Schema.define(version: 2021_11_28_030508) do
     t.index ["tag_id"], name: "index_tags_posts_on_tag_id"
   end
 
-  create_table "tutorials_tbl", primary_key: "tutorial_id", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "tutorial_title", limit: 100, null: false
-    t.string "tutorial_author", limit: 40, null: false
-    t.date "submission_date"
-  end
-
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

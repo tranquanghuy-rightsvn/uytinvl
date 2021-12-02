@@ -14,7 +14,10 @@ vi:
             password:
               blank: "không được để trống"
             password_confirmation:
-              confirmation: "không khớp"              
+              confirmation: "không khớp"
+            current_password:
+              blank: "không được để trống"
+              invalid: "không đúng"
 
         post:
           attributes:
