@@ -1,0 +1,53 @@
+<div class="container mt-20">
+  <div class="row">
+    <div class="col-sm-12 col-md-3">
+      <div class="channel-sidebar">
+        <div class="avatar-main">
+          <% if @channel.avatar_url %>
+            <img src="<%= @channel.avatar %>" >
+          <% else %>
+            <%= image_tag("avatar_default.jpg") %>
+          <% end %>
+        </div>
+        <h4><b><%= @channel.name %></b></h4>
+        <p> 1,233 Followers </p>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-9 detail">
+      <div class="bd-solid">
+        <div class="tab">
+          <button class="tablinks tabchannel" onclick="OpenProfile(event, 'introduce')">Giới thiệu</button>
+          <button class="tablinks tabchannel" onclick="OpenProfile(event, 'post')">Post</button>
+          <% if @channel.user_id == current_user.id %>
+            <button class="tablinks tabchannel" onclick="OpenProfile(event, 'manage')">Quản lý</button>
+          <% end %>
+        </div>
+        <%= render "channels/introduce" %>
+
+        <%= render "channels/home" %>
+
+        <%= render "channels/manage" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function OpenProfile(evt, profile) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(profile).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>

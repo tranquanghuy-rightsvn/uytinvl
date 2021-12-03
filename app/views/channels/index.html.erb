@@ -1,0 +1,55 @@
+<div class="container mt-15">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="box-channel">
+        <h4>Các channel của bạn</h4>
+        <% if @channels.present? %>
+          <ul>
+            <% @channels.each do |channel| %>
+              <%= link_to channel do %>
+                <li>
+                  <% if channel.avatar_url %>
+                    <img src="<%= channel.avatar %>" >
+                  <% else %>
+                    <%= image_tag("avatar_default.jpg") %>
+                  <% end %> 
+                  &nbsp; <%= channel.name %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        <% else %>
+          <p> Bạn chưa tạo channel nào </p>
+        <% end %>
+
+        <%= link_to "<button class= 'btn btn-primary'>Tạo kênh</button>".html_safe, new_channel_path %>
+      </div>
+    </div>
+    
+    <div class="col-sm-12 col-md-6">
+      <div class="box-channel">
+        <h4>Các channel bạn đã tham gia</h4>
+        <ul>
+          <% if @sub_channels.present? %>
+            <ul>
+              <% @sub_channels.each do |channel| %>
+                <%= link_to channel do %>
+                  <li>
+                    <% if channel.avatar_url %>
+                      <img src="<%= channel.avatar %>" >
+                    <% else %>
+                      <%= image_tag("avatar_default.jpg") %>
+                    <% end %>
+                    &nbsp; <%= channel.name %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% else %>
+            <p> Bạn chưa tham gia channel nào </p>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

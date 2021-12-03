@@ -1,0 +1,5 @@
+$("#manage").html("<%= j render('channels/form_manage') %>");
+$("#error_messages_channel").html("<%= j render('shared/error_messages', resource: @channel) %>");
+<% if @channel.errors.blank? %>
+  $("#success-message").html("<p>Cập nhật thành công</p>");
+<% end %>

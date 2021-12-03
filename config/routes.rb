@@ -3,6 +3,11 @@
 Rails.application.routes.draw do
   root to: "home#index"
   resources :posts, only: %i[new create show edit update index]
+  resources :channels do
+    member do
+      post :invite
+    end
+  end 
   resource :users, only: %i[edit update] do 
     collection do
       patch :change_password

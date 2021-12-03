@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   mount_uploader :avatar, AvatarUploader
   has_many :posts, dependent: :destroy
   has_many :channels, dependent: :destroy
   has_many :notifications, foreign_key: 'to_user_id', dependent: :destroy
+  has_many :users_channels
+  has_many :sub_channels, through: :users_channels, source: :channel
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
