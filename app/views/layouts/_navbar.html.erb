@@ -3,28 +3,98 @@
     <%= link_to "Uytinvl", root_path, class: "navbar-brand" %> 
     <div class="navbar-right">
       <% if user_signed_in? %>
-        <div class="dropdown">
-          <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-            <div class="item-account">
-              <% if current_user.avatar_url %>
-                <img src="<%= current_user.avatar.url %>" />
-              <% else %>
-                <%= image_tag("avatar_default.jpg") %>
+        <div class="custom-nav">
+          <div class="dropdown navbar-right-item">
+            <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="notification">
+                <div class="count-noti"><p> 99 </p></div>
+                <div class="bell">
+                  <span class="fas fa-bell fa-lg"></span>
+                </div>
+              </div>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end ul-notification arrow_box_notification" aria-labelledby="navbarDropdown">
+              <div class="mt-15">
+                <li class="confirm-notification">
+                  <h4 class="dropdown-item-custom">Thông báo mới</h4>
+                  <a class="mr-15">Xem tất cả</a>
+                </li>
+              </div>
+              <li><hr class="dropdown-divider"></li>
+              <li class="dropdown-item-custom item-notification">
+                <img src="https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg" />
+                <p>Bạn đã nhận được lời mời tham gia channel <span class="font-bold">Những người uy tín</span> từ <span class="font-bold">Quang Huy</span>
+                </p>
+                <p class="mini-font"> khoảng 6 phút trước</p>
+
+                <div class="confirm-notification">
+                  <button class="btn btn-success">Chấp nhận</button>
+                  <button class="btn btn-danger">Từ chối</button>
+                </div>
+              </li>
+
+              <li class="dropdown-item-custom item-notification">
+                <img src="https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg" />
+                <p>Bạn đã nhận được lời mời tham gia channel <span class="font-bold">Những người uy tín</span> từ <span class="font-bold">Quang Huy</span>
+                </p>
+                <p class="mini-font"> khoảng 6 phút trước</p>
+
+                <div class="confirm-notification">
+                  <button class="btn btn-success">Chấp nhận</button>
+                  <button class="btn btn-danger">Từ chối</button>
+                </div>
+              </li>
+
+              <li class="dropdown-item-custom item-notification">
+                <img src="https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg" />
+                <p>Bạn đã nhận được lời mời tham gia channel <span class="font-bold">Những người uy tín</span> từ <span class="font-bold">Quang Huy</span>
+                </p>
+                <p class="mini-font"> khoảng 6 phút trước</p>
+
+                <div class="confirm-notification">
+                  <button class="btn btn-success">Chấp nhận</button>
+                  <button class="btn btn-danger">Từ chối</button>
+                </div>
+              </li>
+
+              <li class="dropdown-item-custom item-notification">
+                <img src="https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg" />
+                <p>Bạn đã nhận được lời mời tham gia channel <span class="font-bold">Những người uy tín</span> từ <span class="font-bold">Quang Huy</span>
+                </p>
+                <p class="mini-font"> khoảng 6 phút trước</p>
+
+                <div class="confirm-notification">
+                  <button class="btn btn-success">Chấp nhận</button>
+                  <button class="btn btn-danger">Từ chối</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="dropdown navbar-right-item">
+            <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="item-account">
+                <% if current_user.avatar_url %>
+                  <img src="<%= current_user.avatar.url %>" />
+                <% else %>
+                  <%= image_tag("avatar_default.jpg") %>
+                <% end %>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><p class="dropdown-item-custom font-bold"><%= "@" + current_user.name.truncate(20) %></p></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to t(".create_post"), new_post_path, class: "dropdown-item" %></li>
+              <li><%= link_to t(".information"), edit_users_path, class: "dropdown-item" %></li>
+              <li><a class="dropdown-item" href="#"><%= t(".help") %></a></li>
+              <% if current_user && current_user.admin? %>
+              <%= link_to t(".manage"), admin_root_path,class:"dropdown-item" %>
               <% end %>
-            </div>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end arrow_box" aria-labelledby="navbarDropdown">
-            <li><p class="dropdown-item-custom"><%= "@" + current_user.name.truncate(20) %></p></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><%= link_to t(".create_post"), new_post_path, class: "dropdown-item" %></li>
-            <li><%= link_to t(".information"), edit_users_path, class: "dropdown-item" %></li>
-            <li><a class="dropdown-item" href="#"><%= t(".help") %></a></li>
-            <% if current_user && current_user.admin? %>
-            <%= link_to t(".manage"), admin_root_path,class:"dropdown-item" %>
-            <% end %>
-            <li><hr class="dropdown-divider"></li>
-            <li><%= link_to t(".logout"), destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
-          </ul>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to t(".logout"), destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
+            </ul>
+          </div>
         </div>
       <% else %>
         <a data-bs-toggle="modal" class="session" data-bs-target="#modal-signin" data-bs-whatever="@getbootstrap"><%= t(".login") %></a> /
