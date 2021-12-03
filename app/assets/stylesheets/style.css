@@ -10,14 +10,17 @@ body {
   padding: 15px;
   border-radius: 10px;
 }
+
 .login-form h2{
   color: #009999;
   font-size: 20px;
   margin-bottom: 30px;
 }
+
 .field{
   margin-top: 20px;
 }
+
 .field input{
   padding: 7.5px 15px;
   width: 100%;
@@ -25,9 +28,11 @@ body {
   outline: none;
   border-radius: 10px;
 }
+
 .actions{
   position: relative;
 }
+
 .actions input{
   padding: 7.5px 15px;
   border-radius: 10px;
@@ -38,27 +43,25 @@ body {
   position: absolute;
   right: 0;
 }
+
 .signup-form{
   width: 100%;
   max-width: 400px;
   margin: 20px auto;
   background-color: #ffffff;
   padding: 15px;
-  /*border: 2px dotted #cccccc;*/
   border-radius: 10px;
 }
+
 .signup-form h2{
   color: #009999;
   font-size: 20px;
   margin-bottom: 30px;
 }
+
 input:hover{
   border-color: #B0E0E6;
   border-width: 2px;
-}
-
-.mg-r{
-  margin-right:  20px;
 }
 
 .nav-item .session{
@@ -144,6 +147,7 @@ hr{
   font-family: -apple-system;
   padding-bottom: 10px;
 }
+
 #card-signin img{
   width: 25px;
   margin-bottom: 2px;
@@ -164,9 +168,11 @@ hr{
   text-decoration: none;
   cusror: pointer;
 }
+
 .card-item:hover{
   text-decoration: none;
 }
+
 .card-item:hover{
   cursor: pointer;
   background-color: #e8e8e8;
@@ -184,6 +190,9 @@ hr{
 .dropdown-item-custom {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.font-bold{
   font-weight: bold;
 }
 
@@ -191,33 +200,8 @@ hr{
   width: 200px;
 }
 
-.arrow_box {
-  position: relative;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-.arrow_box:after, .arrow_box:before {
-  bottom: 100%;
-  left: 87%;
-  border: solid transparent;
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-.arrow_box:after {
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #fff;
-  border-width: 8px;
-  margin-left: -8px;
-}
-.arrow_box:before {
-  border-color: rgba(232, 232, 232, 0);
-  border-bottom-color: rgba(0, 0, 0, 0.15);
-  border-width: 9px;
-  margin-left: -9px;
+.ul-notification{
+  width: 350px;
 }
 
 .nav-item a{
@@ -587,4 +571,105 @@ hr{
 
 #error_messages_password ul li:last-child{
   padding-bottom: 8px;
+}
+
+.notification{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #d7d2d2;
+  padding-top: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.notification .bell{
+  width: 18px;
+  margin: auto;
+}
+
+.ul-notification{
+  right: -45px !important;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.fa-bell{
+  color: #000;
+}
+
+.notification:hover .fa-bell{
+  color: #3874e1;
+}
+
+.count-noti{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  width: 17px;
+  height: 17px;
+  padding-top: 2px;
+  border-radius: 50%;
+}
+
+.count-noti p{
+  line-height: 12px;
+  text-align: center;
+}
+
+.custom-nav{
+  display: flex;
+  flex-direction: row;
+}
+
+a.nav-link{
+  padding: 5px !important;
+}
+
+h4.dropdown-item-custom{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p.mini-font{
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.item-notification p{
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.item-notification{
+  padding-left: 80px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.item-notification img{
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.confirm-notification{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.confirm-notification button{
+  width: 120px;
+  color: white;
+}
+
+.confirm-notification button:hover{
+  color: white;
 }
