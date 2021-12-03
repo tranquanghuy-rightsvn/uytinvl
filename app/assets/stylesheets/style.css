@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('RobotoSlab-Light.ttf');
+}
+
 body {
-  font-family: 'Noto Serif', serif;
+  font-family: BlinkMacSystemFont, 'Roboto' !important;
 }
 
 .login-form{
@@ -144,7 +149,6 @@ hr{
   border-radius: 3px;
   z-index: 998;
   border-radius: 10px;
-  font-family: -apple-system;
   padding-bottom: 10px;
 }
 
@@ -193,7 +197,7 @@ hr{
 }
 
 .font-bold{
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .dropdown-menu{
@@ -591,7 +595,7 @@ hr{
 .ul-notification{
   right: -45px !important;
   max-height: 500px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .fa-bell{
@@ -666,7 +670,7 @@ p.mini-font{
 }
 
 .confirm-notification button{
-  width: 120px;
+  width: 115px;
   color: white;
 }
 
