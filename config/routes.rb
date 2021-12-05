@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     collection do
       patch :change_password
     end
-  end 
+  end
+  resources :notifications, only: :update 
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
