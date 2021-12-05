@@ -82,10 +82,11 @@ vi:
 
   views:
     pagination:
-      first: "<<"
-      last: ">>"
-      previous: "<"
-      next: ">"
+      first: '<i class="fa fa-angle-double-left"></i>'
+      last: '<i class="fa fa-angle-double-right"></i>'
+      previous: '<i class="fa fa-angle-left"></i>'
+      next: '<i class="fa fa-angle-right"></i>'
+      truncate: "&hellip;"
 
   errors:
     maximum_tag_limit: "Mỗi bài post chỉ có tối đa 5 thẻ tag"

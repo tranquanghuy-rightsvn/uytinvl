@@ -1,0 +1,28 @@
+<%= link_to "<li class='dropdown-item-custom item-notification #{ notification.seen ? "seen" : "not-seen" }'>
+  <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
+  <p>Bạn đã nhận được lời mời tham gia channel <span class='font-bold'>#{ notification.channel.name }</span> từ <span class='font-bold'>#{ notification.from_user.name }</span>
+  </p>
+  <p class='mini-font'> khoảng <span class='time-before-#{ notification.id }'></span> trước</p>
+
+  </li>".html_safe, notification_path(notification), method: :patch
+%>
+
+<%= javascript_tag do %>
+  $('.time-before-<%= notification.id %>').html(before_time(parseInt(Date.now()/1000) - parseInt(<%= notification.created_at.to_i %>)));
+
+  function before_time(time){
+    if(time > 60*60*24*30*11){
+      return parseInt(time/(60*60*24*30*11)) + " năm";
+    } else if (time > 60*60*24*30){
+      return parseInt(time/(60*60*24*30)) + " tháng";
+    } else if (time > 60*60*24){
+      return parseInt(time/(60*60*24)) + " ngày";
+    } else if (time > 60*60){
+      return parseInt(time/ (60*60)) + " giờ";
+    } else if (time > 59){
+      return parseInt(time/60) + " phút";
+    } else {
+      return "1 phút";
+    }
+  }
+<% end %>

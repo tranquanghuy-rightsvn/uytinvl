@@ -192,8 +192,7 @@ hr{
 }
 
 .dropdown-item-custom {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 15px 15px 5px 15px;
 }
 
 .font-bold{
@@ -633,7 +632,7 @@ a.nav-link{
   padding: 5px !important;
 }
 
-h4.dropdown-item-custom{
+.confirm-notification h4{
   font-weight: 500;
   font-size: 20px;
 }
@@ -656,7 +655,7 @@ p.mini-font{
 
 .item-notification img{
   position: absolute;
-  top: 5px;
+  top: 15px;
   left: 15px;
   width: 50px;
   height: 50px;
@@ -676,4 +675,26 @@ p.mini-font{
 
 .confirm-notification button:hover{
   color: white;
+}
+
+.seen p{
+  opacity: 0.4;
+}
+
+li.dropdown-item-custom{
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+li.dropdown-item-custom:hover{
+  background: #e8e8e8;
+}
+
+li.user-profile p{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+ul.ul-notification li{
+  color: #000;
 }

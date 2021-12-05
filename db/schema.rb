@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_030508) do
+ActiveRecord::Schema.define(version: 2021_12_05_091347) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,47 @@ ActiveRecord::Schema.define(version: 2021_11_28_030508) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_channels_on_user_id"
+  end
+
+  create_table "delayed_jobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "notification_group_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "notification_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["notification_id"], name: "index_notification_group_users_on_notification_id"
+    t.index ["user_id"], name: "index_notification_group_users_on_user_id"
+  end
+
+  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "to_user_id", null: false
+    t.bigint "from_user_id"
+    t.bigint "channel_id"
+    t.bigint "post_id"
+    t.bigint "comment_id"
+    t.boolean "seen", default: false
+    t.integer "key"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_notifications_on_channel_id"
+    t.index ["comment_id"], name: "index_notifications_on_comment_id"
+    t.index ["from_user_id"], name: "index_notifications_on_from_user_id"
+    t.index ["post_id"], name: "index_notifications_on_post_id"
+    t.index ["to_user_id"], name: "index_notifications_on_to_user_id"
   end
 
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap4-kaminari-views"
 gem "carrierwave"
 gem "config"
+gem "delayed_job_active_record"
 gem "devise"
 gem "rails-i18n"
 gem "figaro"
