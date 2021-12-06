@@ -40,6 +40,7 @@
               <li class="user-profile"><p class="dropdown-item-custom font-bold"><%= "@" + current_user.name.truncate(20) %></p></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to t(".create_post"), new_post_path, class: "dropdown-item" %></li>
+              <li><%= link_to t(".channels"), channels_path, class: "dropdown-item" %></li>
               <li><%= link_to t(".information"), edit_users_path, class: "dropdown-item" %></li>
               <li><a class="dropdown-item" href="#"><%= t(".help") %></a></li>
               <% if current_user && current_user.admin? %>

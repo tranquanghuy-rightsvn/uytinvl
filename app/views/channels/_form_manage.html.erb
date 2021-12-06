@@ -1,0 +1,61 @@
+<%= form_for(@channel, url: channel_path, method: :patch, remote: true) do |form| %>
+  <div id="error_messages_channel" class="alert alert-danger">
+    <%= render "shared/error_messages", resource: @channel %>
+  </div>
+
+  <div id="success-message" class="alert-success-custom"></div>
+
+  <div class="avatar-channel">
+    <% if @channel.avatar_url %>
+      <img src="<%= @channel.avatar %>" class="avatar-user" >
+    <% else %>
+      <%= image_tag("avatar_default.jpg", class: "avatar-user") %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <div class="form-group"> 
+          <%= form.file_field :avatar, id:"file-avatar" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= form.label :detail %>
+        <%= form.text_area :detail, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-end">
+      <div class="button-create">
+        <%= form.submit t(".update"), class: "btn btn-outline-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("input[id='file-avatar']").hide();
+
+    $(".avatar-channel").click(function() {
+      $("input[id='file-avatar']").click();
+    });
+
+    $('#file-avatar').change(function(){
+      const file = this.files[0];
+      if (file){
+        let reader = new FileReader();
+        reader.onload = function(event){
+          $('.avatar-user').attr('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  });
+</script>
