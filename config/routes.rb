@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   end
 
   # match '*path', :to => 'application#redirect_to_root_path', via: [:get, :post]
+
+  mount ActionCable.server => '/cable'
 end

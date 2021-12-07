@@ -1,13 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <%= link_to "Uytinvl", root_path, class: "navbar-brand" %> 
+    <%= link_to image_tag("logo-1.png"), root_path, class: "navbar-brand logo" %> 
     <div class="navbar-right">
       <% if user_signed_in? %>
         <div class="custom-nav">
           <div class="dropdown navbar-right-item">
             <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <div class="notification">
-                <%= current_user_count_noti %>
+                <div id="notification-counter">
+                  <%= render "notifications/counter", counter: current_user.count_noti %>
+                </div>
                 <div class="bell">
                   <span class="fas fa-bell fa-lg"></span>
                 </div>
@@ -22,7 +24,9 @@
                 </li>
               </div>
               <li><hr class="dropdown-divider"></li>
-              <%= render "notifications/index", notifications: current_user.list_notification %>
+              <div class="display-content" id="notifications-list" >
+                <%= render "notifications/index", notifications: current_user.list_notification %>
+              </div>
             </ul>
           </div>
 
