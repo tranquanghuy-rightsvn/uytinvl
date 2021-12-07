@@ -5,13 +5,10 @@
         <div class="tab">
           <button class="tablinks" onclick="OpenProfile(event, 'information')"><%= t(".information") %></button>
           <button class="tablinks" onclick="OpenProfile(event, 'password')"><%= t(".password") %></button>
-          <button class="tablinks" onclick="OpenProfile(event, 'channel')"><%= t(".channels") %></button>
         </div>
         <%= render "users/information" %>
 
         <%= render "users/password" %>
-        
-        <%= render "users/channel" %>
       </div>
     </div>
   </div>
