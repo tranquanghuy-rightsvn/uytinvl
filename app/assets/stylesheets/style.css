@@ -736,11 +736,20 @@ ul.ul-notification li{
 }
 
 .channel-sidebar{
-  width: 120px;
-  height: 200px;
+  width: 200px;
+  min-height: 200px;
   margin: auto;
   padding-top: 10px;
+}
+
+.channel-name{
+  width: 200px;
   text-align: center;
+  margin: auto;
+}
+
+.channel-name b{
+  word-wrap: break-word;
 }
 
 .tagchannel{
@@ -789,11 +798,25 @@ ul.ul-notification li{
   margin-top: 8px;
 }
 
-.box-channel img{
+.box-channel .my-channel{
+  display: inline-block;
+  position: absolute;
+  margin-top: 14px;
+}
+
+.avatar-main-channel{
   width: 30px;
-  min-height: 30px;
+  height: 30px;
   border-radius: 50%;
   overflow: hidden;
+  margin: auto;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.avatar-main-channel img{
+  width: 30px;
+  min-height: 30px;
 }
 
 .bd-solid{
@@ -815,4 +838,21 @@ nav.navbar{
 nav .logo img{
   width: auto;
   height: 40px;
+}
+
+#manage{
+  min-height: 540px;
+}
+
+.search-user{
+  display: flex;
+  justify-content: space-between;
+}
+
+p.alert-success{
+  padding: 15px !important;
+}
+
+p.alert-danger{
+  padding: 15px !important;
 }

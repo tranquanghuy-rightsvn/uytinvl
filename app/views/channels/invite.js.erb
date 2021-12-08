@@ -1,0 +1,10 @@
+<% if @user.blank? %>
+  $("#error_messages_invite").html("<p class='alert alert-danger'>Người dùng không tồn tại</p>");
+  $("#success-message-invite").html("");
+<% elsif @user.id == current_user.id %>
+  $("#error_messages_invite").html("<p class='alert alert-danger'>Bạn không thể mời chính mình</p>");
+  $("#success-message-invite").html("");
+<% else %>
+  $("#success-message-invite").html("<p class='alert alert-success'>Mời thành công</p>");
+  $("#error_messages_invite").html("");
+<% end %>

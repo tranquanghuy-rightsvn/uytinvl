@@ -1,0 +1,15 @@
+<%= form_tag(invite_channel_path, remote: true) do %>
+  <div id="error_messages_invite" class="alert-danger-invite">
+  </div>
+  <div id="success-message-invite" class="alert-success-custom"></div>
+    <div class="form-group">
+      <label>Mời thành viên</label>
+      <div class="search-user">
+        <%= email_field_tag :email, "", class: "form-control", placeholder: "Nhập email để mời"%></br> &emsp;
+        <div class="submit-invite">
+          <%= submit_tag 'Mời', class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

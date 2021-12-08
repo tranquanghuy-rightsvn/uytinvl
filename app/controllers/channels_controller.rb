@@ -1,11 +1,13 @@
 class ChannelsController < ApplicationController
   before_action :check_current_user
-  before_action :set_channel, only: %i[show edit update destroy]
+  before_action :set_channel, only: %i[show edit update destroy invite]
   before_action :check_owner, only: :update
 
   def index
     @channels = current_user.channels
-    @sub_channels = current_user.sub_channels
+    channel_ids = current_user.users_channels.accepted.pluck(:channel_id, :user_id)
+    @sub_channels = Channel.where(id: channel_ids)
+    @sub_channels = current_user.sub_channels.where(users_channels: { status: :accepted})
   end
 
   def new
@@ -43,7 +45,16 @@ class ChannelsController < ApplicationController
 
   def invite
     @user = User.find_by(email: params[:email])
-    UsersChannel.create(user_id: user.id, channel_id: params[:id]) 
+
+    if @user.present? && @user.id != current_user.id
+      UsersChannel.create(user_id: @user.id, channel_id: params[:id])
+      NotificationService.new(to_user: @user, channel: @channel,
+        from_user: current_user, key: "invite_channel").perform
+    end
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
