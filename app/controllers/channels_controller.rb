@@ -6,9 +6,8 @@ class ChannelsController < ApplicationController
 
   def index
     @channels = current_user.channels
-    channel_ids = current_user.users_channels.accepted.pluck(:channel_id, :user_id)
+    channel_ids = current_user.users_channels.accepted.pluck(:channel_id)
     @sub_channels = Channel.where(id: channel_ids)
-    @sub_channels = current_user.sub_channels.where(users_channels: { status: :accepted})
   end
 
   def new
