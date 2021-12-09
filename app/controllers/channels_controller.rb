@@ -1,6 +1,7 @@
 class ChannelsController < ApplicationController
   before_action :check_current_user
-  before_action :set_channel, only: %i[show edit update destroy invite]
+  before_action :set_channel, only: %i[show edit update destroy invite confirm_invite]
+  before_action :set_users_channel, only: %i[show confirm_invite]
   before_action :check_owner, only: :update
 
   def index
@@ -43,11 +44,18 @@ class ChannelsController < ApplicationController
     redirect_to channels_path
   end
 
+  def confirm_invite
+    @users_channel.send("#{params[:confirm]}!") if @users_channel && @users_channel.waiting?
+ 
+    redirect_to @channel
+  end
+
+
   def invite
     @user = User.find_by(email: params[:email])
 
     if @user.present? && @user.id != current_user.id
-      UsersChannel.create(user_id: @user.id, channel_id: params[:id])
+      UsersChannel.find_or_create_by!(user_id: @user.id, channel_id: params[:id])
       NotificationService.new(to_user: @user, channel: @channel,
         from_user: current_user, key: "invite_channel").perform
     end
@@ -69,5 +77,9 @@ class ChannelsController < ApplicationController
 
   def check_owner
     redirect_to root_path unless @channel.user_id == current_user.id
+  end
+
+  def set_users_channel
+    @users_channel = current_user.users_channels.find_by(channel_id: params[:id])
   end
 end
