@@ -11,8 +11,7 @@
 %>
 
 <%= javascript_tag do %>
-  let time = parseInt(Date.now()/1000) - parseInt(<%= notification.created_at.to_i %>);
-  $('.time-before-<%= notification.id %>').html(before_time(time));
+  $('.time-before-<%= notification.id %>').html(before_time(parseInt(Date.now()/1000) - parseInt(<%= notification.created_at.to_i %>)));
 
   function before_time(time){
     if(time > 60*60*24*30*11){
