@@ -728,6 +728,7 @@ ul.ul-notification li{
   border-radius: 50%;
   overflow: hidden;
   margin: auto;
+  border: 1px solid #e8e8e8;
 }
 
 .avatar-main img{
@@ -855,4 +856,25 @@ p.alert-success{
 
 p.alert-danger{
   padding: 15px !important;
+}
+
+.select-invite{
+  display: inline;
+}
+
+.confirm-invite-channel{
+  width: auto;
+}
+
+.wrapper-invite{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 5px;
+}
+
+.confirm-invite-channel a{
+  text-decoration: none !important;
+  color: red !important;
 }

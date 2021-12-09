@@ -1,4 +1,15 @@
 <div class="container">
+  <% if @users_channel.present? && @users_channel.waiting? %>
+    <div class="confirm-invite-channel">
+      <p class="alert alert-success">
+        Bạn nhận được lời mời tham gia channel này.
+        <%= link_to "Chấp nhận", confirm_invite_channel_path(confirm: "accepted"), method: :post %> 
+        hoặc 
+        <%= link_to 'Từ chối', confirm_invite_channel_path(confirm: "rejected"), method: :post %>
+      </p>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="col-sm-12 col-md-4 col-lg-3">
       <div class="channel-sidebar">

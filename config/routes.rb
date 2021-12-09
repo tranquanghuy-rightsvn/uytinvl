@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :channels do
     member do
       post :invite
+      post :confirm_invite
     end
   end 
   resource :users, only: %i[edit update] do 
