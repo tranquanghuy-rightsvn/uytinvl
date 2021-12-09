@@ -53,11 +53,7 @@ class ChannelsController < ApplicationController
   def invite
     @user = User.find_by(email: params[:email])
 
-    if @user.present? && @user.id != current_user.id
-      UsersChannel.find_or_create_by!(user_id: @user.id, channel_id: params[:id])
-      NotificationService.new(to_user: @user, channel: @channel,
-        from_user: current_user, key: "invite_channel").perform
-    end
+    check_invite_channel if @user.present? && @user.id != current_user.id
 
     respond_to do |format|
       format.js
@@ -80,5 +76,21 @@ class ChannelsController < ApplicationController
 
   def set_users_channel
     @users_channel = current_user.users_channels.find_by(channel_id: params[:id])
+  end
+
+  def check_invite_channel
+    users_channel = UsersChannel.find_by(user_id: @user.id, channel_id: params[:id])
+
+    if users_channel
+      return error = true if users_channel.waiting?
+      users_channel.waiting! if users_channel.rejected?
+    else
+      users_channel = UsersChannel.create(user_id: @user.id, channel_id: params[:id])
+    end
+
+    if users_channel.waiting? && !error
+      NotificationService.new(to_user: @user, channel: @channel,
+        from_user: current_user, key: "invite_channel").perform
+    end
   end
 end

@@ -14,7 +14,7 @@ class NotificationService
   def perform
     case key
     when "invite_channel"
-      Notification.find_or_create_by! to_user_id: to_user.id, from_user_id: from_user.id,
+      Notification.create to_user_id: to_user.id, from_user_id: from_user.id,
         channel_id: channel.id, key: key
     when "comment_post"
       ActiveRecor::Base.transaction do
