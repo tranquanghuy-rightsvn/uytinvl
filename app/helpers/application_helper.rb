@@ -11,4 +11,10 @@ module ApplicationHelper
 
     "<div class='count-noti'><p> 99 </p></div>".html_safe
   end
+
+  def avatar_of object
+    return "<img src='#{object.avatar_url}' />".html_safe if object.avatar_url
+
+    image_tag("avatar_#{object.class.to_s.downcase}_default.jpg")
+  end
 end
