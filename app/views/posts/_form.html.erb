@@ -2,9 +2,23 @@
   <div id="error_messages_post" class="alert alert-danger">
     <%= render "shared/error_messages", resource: post %>
   </div>
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control" %>
+
+  <div class="row">
+    <div class="form-group col-md-12 col-lg-6">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-12 col-lg-6">
+      <%= form.label :channel %>
+      <%= form.select(
+        :channel_id,
+        options_for_select(([""] + current_user.generate_options_channel), post.channel_id),
+        {},
+        class: "form-control",
+        disabled: post.persisted?)
+      %>
+    </div>
   </div>  
 
   <div class="form-group">
@@ -14,7 +28,7 @@
 
   <div class="form-group">
     <%= form.label :category %> 
-    <%= form.select(:category_id, options_for_select(Category.generate_options), {}, class: "form-control") %>
+    <%= form.select(:category_id, options_for_select(Category.generate_options, post.category_id), {}, class: "form-control") %>
   </div>
 
   <div class="form-group"> 
@@ -22,7 +36,7 @@
     <%= form.file_field :image, id: "inputImagePost", class: "form-control" %>
 
     <div class="image-post">
-      <img id="imagePost">
+      <img id="imagePost" src="<%= post.image_url %>">
     </div>
   </div>
   

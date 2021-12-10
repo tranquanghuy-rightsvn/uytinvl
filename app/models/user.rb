@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def list_notification
     notifications.includes(:channel, :post, :from_user, :notification_group_users).newest
   end
+
+  def generate_options_channel
+    channels.pluck(:name, :id) + sub_channels.where(users_channels: { status: :accepted }).pluck(:name, :id)
+  end
 end

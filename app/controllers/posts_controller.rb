@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    if @post.update post_params
+    if @post.update post_update_params
       redirect_to @post
     else
       render :edit
@@ -41,6 +41,10 @@ class PostsController < ApplicationController
   end
 
   def post_params
+    params.require(:post).permit(:title, :content, :category_id, :image, :channel_id)
+  end
+
+  def post_update_params
     params.require(:post).permit(:title, :content, :category_id, :image)
   end
 

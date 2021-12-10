@@ -1,27 +1,42 @@
 <div class="container">
   <div class="body-post">
-    <% if current_user&.id == @post.user_id %>
-      <%= link_to "<button class='btn btn-primary btn-edit-post'> <i class='fas fa-edit'></i> </button>".html_safe,
-        edit_post_path(@post) %> 
-    <% end %>
+    <div class="post-header">
+      <div class="category"><p><i><%= @post.created_at.in_time_zone(7).strftime(Settings.date.format) %></i></p></div>
 
-    <div class="category"><p><%= @post.category.name %></p></div>
+      <div class="dropdown">
+        <a href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <p class="hellip">&hellip;</p>
+        </a>
+        <ul class="dropdown-menu custom-inset" aria-labelledby="dropdownMenuLink">
+          <% if current_user && current_user.id == @post.user_id %>
+            <li>
+              <%= link_to "Chỉnh sửa", edit_post_path(@post), class: 'dropdown-item' %>
+            </li>
+          <% else %>
+            <li><a class="dropdown-item">Báo cáo</a></li>
+          <% end %>
+          <li><a class="dropdown-item">Chia sẻ</a></li>
+        </ul>
+      </div>
+    </div>
+
     <h1>
       <%= @post.title %>
     </h1>
 
     <div class="author-post">
       <div class="left">
-        <img src="https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg" />
+        <!-- handle user_path -->
+        <%= link_to "<div class='avatar-post'>
+          #{@post.channel_id ? avatar_of(@post.channel) : avatar_of(@post.user)}
+          </div>".html_safe,
+          @post.channel_id ? @post.channel : root_path
+        %>
       </div>
 
       <div class="mid">
-        <p><%= @post.user.name %> | 1.k followers</p>
+        <p><%= @post.channel_id ? @post.channel.name : @post.user.name %> | 1.k followers</p>
         <button class="btn btn-success" title="huỷ theo dõi"><i class="fas fa-check"></i> Đang theo dõi</button>
-      </div>
-
-      <div class="right">
-        <p><i><%= @post.created_at.in_time_zone(7).strftime(Settings.date.format) %></i></p>
       </div>
     </div>
 

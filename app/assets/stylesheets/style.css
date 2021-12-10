@@ -125,6 +125,7 @@ hr{
   border-radius: 50%;
   cursor: pointer;
   overflow: hidden;
+  border: 1px solid #e8e8e8;
 }
 
 .item-account img{
@@ -228,10 +229,6 @@ hr{
   font-weight: 700;
 }
 
-.body-post .category{
-  margin-top: 20px;
-}
-
 .body-post .category p{
   text-transform: uppercase;
   color: #888;
@@ -264,7 +261,6 @@ hr{
 
 .author-post .right{
   float: right;
-  margin-right: 20px;
 }
 
 .author-post .right p{
@@ -275,13 +271,6 @@ hr{
 .author-post .mid p{
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.author-post img{
-  display: inline;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 }
 
 .author-post p{
@@ -894,4 +883,34 @@ p.alert-danger{
 .confirm-invite-channel a{
   text-decoration: none !important;
   color: red !important;
+}
+
+.avatar-post {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+
+.author-post img{
+  width: 50px;
+  min-height: 50px;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ul.custom-inset {
+  width: 120px !important;
+  inset: 0 auto auto -140px !important;
+}
+
+.hellip{
+  font-size: 45px;
+  line-height: 5px;
+  color: red;
 }
