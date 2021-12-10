@@ -550,8 +550,25 @@ hr{
   margin-top: -15px;
 }
 
+.alert-danger-custom {
+  font-size: 13px;
+  background-color: #f8d7da;
+  color: #842029;
+  margin-top: -15px;
+  list-style-type: circle;
+}
+
+
 .alert-success-custom p{
   padding: 8px 20px;
+}
+
+#message-password-blank ul li:first-child{
+  padding-top: 8px;
+}
+
+#message-password-blank ul li:last-child{
+  padding-bottom: 8px;
 }
 
 #error_messages_user ul li:first-child{

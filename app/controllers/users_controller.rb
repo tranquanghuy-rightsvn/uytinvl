@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   end
 
   def change_password
-    if current_user.update_with_password change_password_params
+    @error_password_blank = true if change_password_params[:password].blank?
+
+    if current_user.update_with_password(change_password_params)
       sign_in current_user, bypass: true
     end
 
