@@ -8,6 +8,7 @@ class Post < ApplicationRecord
 
   has_many :tags_posts
   has_many :tags, through: :tags_posts
+  has_many :comments, as: :resource
 
   validates :title, presence: true
   validates :image, presence: true

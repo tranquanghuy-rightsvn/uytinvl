@@ -989,6 +989,11 @@ ul.custom-inset {
 
   .reply-comment{
     margin-top: 10px;
-    max-height: 600px;
+    max-height: 400px;
     overflow: scroll;
+  }
+
+  .time-before{
+    font-size: 13px;
+    font-weight: normal;
   }

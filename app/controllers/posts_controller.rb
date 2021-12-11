@@ -21,7 +21,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comments = @post.comments.includes(:user, parent_comment: :user).get_parents
+  end
 
   def edit; end
 

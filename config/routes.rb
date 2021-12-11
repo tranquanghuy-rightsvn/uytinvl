@@ -14,7 +14,9 @@ Rails.application.routes.draw do
       patch :change_password
     end
   end
-  resources :notifications, only: :update 
+  resources :notifications, only: :update
+  resources :comments, only: %i[create update destroy]
+
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
