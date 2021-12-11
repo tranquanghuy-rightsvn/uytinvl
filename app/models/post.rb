@@ -23,7 +23,9 @@ class Post < ApplicationRecord
   end
 
   def channel_must_belongs_to_user
-    (user.channels.pluck(:id) + user.sub_channels.where(users_channels: { status: :accepted })
-      .pluck(:id)).include?(channel_id) 
+    return if (user.channels.pluck(:id) + user.sub_channels.where(users_channels: { status: :accepted })
+      .pluck(:id)).include?(channel_id)
+
+    errors.add(:channel_id, :invalid)
   end
 end

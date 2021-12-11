@@ -15,11 +15,12 @@ vi:
         detail: "Giới thiệu"
       post:
         title: "Tiêu đề"
-        rich_text_content: "Nội dung"
+        content: "Nội dung"
         image: "Ảnh đại diện"
         category: "Thể loại"
         user: "Người viết"
         channel: "Kênh"
+        author: "Tác giả"
       category:
         name: "Tên"
       tag:

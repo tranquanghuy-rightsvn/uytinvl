@@ -10,10 +10,10 @@
     </div>
 
     <div class="form-group col-md-12 col-lg-6">
-      <%= form.label :channel %>
+      <%= form.label :author %>
       <%= form.select(
         :channel_id,
-        options_for_select(([""] + current_user.generate_options_channel), post.channel_id),
+        options_for_select(([[current_user.name, nil]] + current_user.generate_options_channel), post.channel_id),
         {},
         class: "form-control",
         disabled: post.persisted?)
