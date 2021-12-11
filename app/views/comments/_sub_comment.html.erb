@@ -1,0 +1,16 @@
+<div class="form-comment-post">
+  <div class="comment-author">
+    <div class="wrapper-img-post">
+      <%= avatar_of comment.user %>
+    </div>
+    <p class="author-name"><%= comment.user.name %></p>
+  </div>
+
+  <p><%= comment.content %></p>
+
+  <div class="footer-comment">
+    <a> 125 <i class="far fa-thumbs-up"></i></a>
+    &nbsp;&nbsp;&nbsp;
+    <a class="reply-<%= parent_comment.id %>"> Trả lời </a>
+  </div>
+</div>

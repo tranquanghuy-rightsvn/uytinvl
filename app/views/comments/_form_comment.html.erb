@@ -1,0 +1,6 @@
+<%= form_for(Comment.new, url: comments_path, remote: true) do |f| %>
+  <%= f.text_field :resource_type, value: "Post", hidden: true %>
+  <%= f.text_field :resource_id, value: post.id, hidden: true %>
+  <%= f.text_area :content, class: "form-control", rows: 2 %>
+  <%= f.button "Gửi bình luận", class: "btn btn-primary" %>
+<% end %>

@@ -50,122 +50,27 @@
     <div class="comment-post">
       <h5>Bình luận</h5>
 
-      <div class="form-comment-post">
-        <div class="form-group">
-          <div class="comment-author">
-            <div class="wrapper-img-post">
-               <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
+      <% if current_user %>
+        <div class="form-comment-post">
+          <div class="form-group">
+            <div class="comment-author">
+              <div class="wrapper-img-post">
+                <%= avatar_of current_user %>
+              </div>
+              <p class="author-name"><%= current_user.name %></p>
             </div>
-            <p class="author-name">Tran Quang Huy</p>
-          </div>
 
-          <div class="input-comment">
-            <textarea class="form-control" rows=2></textarea>
-            <button class="btn btn-primary">Gửi bình luận</button>
+            <div class="input-comment">
+              <%= render "comments/form_comment", post: @post %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
 
       <hr />
 
       <div class="content-comment-post">
-        <div class="form-comment-post">
-          <div class="comment-author">
-            <div class="wrapper-img-post">
-               <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
-            </div>
-            <p class="author-name">Tran Quang Huy</p>
-          </div>
-
-          <p>cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong </p>
-
-          <div class="footer-comment">
-            <a> 125 <i class="far fa-thumbs-up"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a class="reply"> Trả lời </a>
-          </div>
-
-          <div class="input-comment-1">
-            <textarea class="form-control" rows=2></textarea>
-            <button class="btn btn-primary">Gửi rả lời</button>
-          </div>
-
-          <div class="reply-comment">
-            <div class="form-comment-post">
-              <div class="comment-author">
-                <div class="wrapper-img-post">
-                   <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
-                </div>
-                <p class="author-name">Tran Quang Huy</p>
-              </div>
-
-              <p>cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong </p>
-
-              <div class="footer-comment">
-                <a> 125 <i class="far fa-thumbs-up"></i></a>
-                &nbsp;&nbsp;&nbsp;
-                <a> Trả lời </a>
-              </div>
-            </div>
-
-            <div class="form-comment-post">
-              <div class="comment-author">
-                <div class="wrapper-img-post">
-                   <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
-                </div>
-                <p class="author-name">Tran Quang Huy</p>
-              </div>
-
-              <p>cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong </p>
-
-              <div class="footer-comment">
-                <a> 125 <i class="far fa-thumbs-up"></i></a>
-                &nbsp;&nbsp;&nbsp;
-                <a> Trả lời </a>
-              </div>
-            </div>
-          </div>
-
-          <hr />
-        </div>
-
-        <div class="form-comment-post">
-          <div class="comment-author">
-            <div class="wrapper-img-post">
-               <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
-            </div>
-            <p class="author-name">Tran Quang Huy</p>
-          </div>
-
-          <p>cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong </p>
-
-          <div class="footer-comment">
-            <a> 125 <i class="far fa-thumbs-up"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a> Trả lời </a>
-          </div>
-
-          <hr />
-        </div>
-
-        <div class="form-comment-post">
-          <div class="comment-author">
-            <div class="wrapper-img-post">
-               <img src='https://sohanews.sohacdn.com/thumb_w/660/2017/1291610710209554594881299982616623413613868o-1506468168931.jpg' />
-            </div>
-            <p class="author-name">Tran Quang Huy</p>
-          </div>
-
-          <p>cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong cái này đúng nhe. ông này cung không phải tay mơ. thậm chí đội hình của malay cũng nặng ký. Nhưng cơ bản VN đang cis 1 lứa quá hay cùng hlv phù hợp nên Malay nhận thất bại. cái này y như chu du và gia cac luong </p>
-
-          <div class="footer-comment">
-            <a> 125 <i class="far fa-thumbs-up"></i></a>
-            &nbsp;&nbsp;&nbsp;
-            <a> Trả lời </a>
-          </div>
-
-          <hr />
-        </div>
+        <%= render @comments %>
       </div>
     </div>
   </div>

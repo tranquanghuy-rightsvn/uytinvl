@@ -1,0 +1,52 @@
+<div class="form-comment-post">
+  <div class="comment-author">
+    <div class="wrapper-img-post">
+       <%= avatar_of comment.user %>
+    </div>
+    <p class="author-name"><%= comment.user.name %> &nbsp;<i class="time-before"> 1 phút trước </i> </p>
+  </div>
+
+  <p><%= comment.content %></p>
+
+  <div class="footer-comment">
+    <a> 125 <i class="far fa-thumbs-up"></i></a>
+    &nbsp;&nbsp;&nbsp;
+    <a class="reply-<%= comment.id %>"> Trả lời </a>
+  </div>
+
+  <div class="input-comment-<%= comment.id %> dp-n">
+    <%= form_for(Comment.new, url: comments_path, remote: true) do |f| %>
+      <%= f.text_field :resource_type, value: "Post", hidden: true %>
+      <%= f.text_field :resource_id, value: @post.id, hidden: true %>
+      <%= f.text_field :parent_comment_id, value: comment.id, hidden: true %>
+      <%= f.text_area :content, class: "form-control", rows: 2 %>
+      <%= f.button "Gửi trả lời", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="reply-comment">
+    <% comment.sub_comments.map do |cm| %>
+      <%= render "comments/sub_comment", comment: cm, parent_comment: comment %>
+    <% end %>
+  </div>
+
+  <hr />
+</div>
+
+<%= javascript_tag do %>
+$(document).ready(function(){
+  let status_<%= comment.id %> = false;
+  $('.reply-<%= comment.id %>').click(function(){
+    if(status_<%= comment.id %> === false){
+      $('.input-comment-<%= comment.id %>').slideToggle('show');
+      setTimeout(function(){
+        $('.input-comment-<%= comment.id %> textarea').focus()
+      }, 500);
+    }else{
+      $('.input-comment-<%= comment.id %>').slideToggle('hide');
+    }
+
+    status_<%= comment.id %> = !status_<%= comment.id %>;
+  });
+});
+<% end %>

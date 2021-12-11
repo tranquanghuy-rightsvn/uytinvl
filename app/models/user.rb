@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :notifications, foreign_key: 'to_user_id', dependent: :destroy
   has_many :users_channels
   has_many :sub_channels, through: :users_channels, source: :channel
+  has_many :comments
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

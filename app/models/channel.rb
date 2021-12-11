@@ -5,6 +5,7 @@ class Channel < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :users_channels
   has_many :members, through: :users_channels, source: :user
+  has_many :comments, as: :resource
 
   validates :name, presence: true, length: { maximum: Settings.channel.length_name.max}
 end
