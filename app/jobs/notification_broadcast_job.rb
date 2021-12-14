@@ -4,7 +4,7 @@ class NotificationBroadcastJob < ApplicationJob
   def perform notification
     ActionCable.server.broadcast "notifications:#{notification.to_user_id}",
       { 
-        layout: render_notification(notification.to_user.list_notification)
+        layout: render_notification([notification.to_user.list_notification.first])
       }
   end
 
