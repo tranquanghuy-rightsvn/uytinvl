@@ -37,3 +37,11 @@ a{
 .dp-n{
   display: none;
 }
+
+.color-bl{
+  color: black;
+}
+
+.pl-15-important{
+  padding-left: 15px !important;
+}

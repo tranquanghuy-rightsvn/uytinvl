@@ -910,12 +910,6 @@ ul.custom-inset {
   inset: 0 auto auto -140px !important;
 }
 
-.hellip{
-  font-size: 40px;
-  line-height: 5px;
-  color: red;
-}
-
 .comment-post{
   margin-top: 60px;
 }
@@ -1016,4 +1010,48 @@ ul.custom-inset {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #afb3b7;
+}
+
+footer {
+  width: 100%;
+  background: #e8e8e8;
+  padding: 20px 0 10px;
+}
+
+.logo-footer img{
+  height: 50px;
+}
+
+.ta-center{
+  text-align: center;
+}
+
+.social{
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-facebook{
+  color: #385898;;
+}
+
+.fa-google-plus{
+  color: #DB4437;
+}
+
+.fa-twitter-square{
+  color: #1DA1F2;
+}
+
+.categories-ft ul{
+  padding: 0;
+}
+
+.categories-ft ul li{
+  list-style-type: none;
+  line-height: 40px;
+}
+
+footer a{
+  color: black;
 }
