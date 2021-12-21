@@ -1,13 +1,13 @@
 .suggesting .post-box img{
-  height: 50vw;
+  height: 25vw;
 }
 
 .suggesting .post-box{
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .suggesting .post-box-title{
-  height: 60px;
+  margin-bottom: 10px;
 }
 
 .trending .first-trending img{
@@ -33,10 +33,6 @@
 
   .trending .first-trending img{
     height: 40vw;
-  }
-
-  .suggesting .post-box-title{
-    height: 80px;
   }
 
   .trending .post-box-title{
