@@ -29,4 +29,13 @@ class Post < ApplicationRecord
 
     errors.add(:channel_id, :invalid)
   end
+
+  def hashtags=(names)
+    tag_names = names.split(",").collect{|name| name.strip.downcase}.uniq
+    self.tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
+  end
+
+  def hashtags
+    tags.map{|tag| tag.name}.join(", ")
+  end
 end

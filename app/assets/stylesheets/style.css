@@ -1017,3 +1017,15 @@ ul.custom-inset {
 ::-webkit-scrollbar-thumb:hover {
   background: #afb3b7;
 }
+
+.item-post{
+  background: #eee;
+  border-radius: 9px;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  color: #666;
+  padding: 0 8px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
