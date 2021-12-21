@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  resources :tags, only: %i(show)
+
   # match '*path', :to => 'application#redirect_to_root_path', via: [:get, :post]
 
   mount ActionCable.server => '/cable'

@@ -1,0 +1,21 @@
+<div class="container posts">
+  <div class="section-title">
+    <h3> CÓ THỂ BẠN QUAN TÂM </h3>
+  </div>
+  <div class="suggesting">
+    <div class="row" id="posts">
+      <% @posts.map do |post| %>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+          <div class="post-box">
+            <%= link_to post do %>
+              <img src="<%= post.image %>" />
+              <div class="post-box-title">
+                <p><%= post.title %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

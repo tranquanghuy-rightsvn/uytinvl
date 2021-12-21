@@ -29,4 +29,8 @@ class Post < ApplicationRecord
 
     errors.add(:channel_id, :invalid)
   end
+
+  def tag_post
+    tags.pluck(:name)
+  end
 end
