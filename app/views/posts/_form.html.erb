@@ -31,6 +31,11 @@
     <%= form.select(:category_id, options_for_select(Category.generate_options, post.category_id), {}, class: "form-control") %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :tags %>
+    <%= form.text_field :tags, value: @post.tag_post.join(", "), class: "form-control" %>
+  </div>
+
   <div class="form-group"> 
     <%= form.label :image %>
     <%= form.file_field :image, id: "inputImagePost", class: "form-control" %>
