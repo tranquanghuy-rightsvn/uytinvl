@@ -16,6 +16,7 @@ Turbolinks.start()
 ActiveStorage.start()
 require('jquery')
 require("packs/index")
+require("packs/tagify")
 require('admin-lte');
 require("trix")
 require("@rails/actiontext")
