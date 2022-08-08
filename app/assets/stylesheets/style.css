@@ -7,6 +7,11 @@ body {
   font-family: BlinkMacSystemFont, 'Roboto', 'Arial' !important;
 }
 
+.main {
+  min-height: calc(100vh - 400px);
+  padding-bottom: 50px;
+}
+
 .login-form{
   width: 100%;
   max-width: 400px;
