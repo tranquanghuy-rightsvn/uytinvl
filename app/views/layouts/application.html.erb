@@ -13,10 +13,12 @@
 
   <body>
     <%= render "layouts/navbar" %>
-    <%= yield %>
-    
+    <div class="main">
+      <%= yield %>
+    </div>
+
     <%= render "layouts/signup" %>
     <%= render "layouts/loginform" %>
     <%= render "layouts/footer" %>
-  </body> 
+  </body>
 </html>
