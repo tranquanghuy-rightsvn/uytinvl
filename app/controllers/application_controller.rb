@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :load_new_user
-  
+
   def load_new_user
     @user = User.new
   end
@@ -13,5 +13,9 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_root_path
     redirect_to root_path
+  end
+
+  def reformat tag
+    tag.downcase.strip.gsub("#", "")
   end
 end

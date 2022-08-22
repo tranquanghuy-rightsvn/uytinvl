@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener("turbolinks:load", () => {
   $("#error-message-signin").hide();
 
   $(".login-form .field input").focus(function(){
@@ -27,5 +27,5 @@ $(document).ready(function() {
     $('#modal-signin').modal('show');
     $("#error-message-signin").hide();
     $(".login-form .field input").css("border-color", "black");
-  }); 
+  });
 });

@@ -1128,3 +1128,8 @@ footer a{
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+.tagify{
+  height: auto !important;
+  min-height: 100px;
+}

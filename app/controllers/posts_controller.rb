@@ -16,8 +16,9 @@ class PostsController < ApplicationController
 
     ActiveRecord::Base.transaction do
       if @post.save
-        params[:post][:tags].split(",").map do |tag_name|
-          tag = Tag.find_or_create_by(name: tag_name.strip)
+        tags = JSON.parse(params[:post][:tags]).map{|tag| reformat(tag.dig("value"))}
+        tags.map do |tag_name|
+          tag = Tag.find_or_create_by(name: tag_name)
           TagsPost.find_or_create_by(tag_id: tag.id, post_id: @post.id)
         end
 
@@ -37,14 +38,16 @@ class PostsController < ApplicationController
   def update
     ActiveRecord::Base.transaction do
       if @post.update post_update_params
-        @post.tags_posts.map do |tags_post|
-          next if params[:post][:tags].split(",").map(&:strip).map(&:downcase).include?(tags_post.tag.name)
+        tags = JSON.parse(params[:post][:tags]).map{|tag| reformat(tag.dig("value"))}
+
+        @post.tags_posts.includes(:tag).map do |tags_post|
+          next if tags.include?(tags_post.tag.name)
 
           tags_post.destroy!
         end
 
-        params[:post][:tags].split(",").map do |tag_name|
-          tag = Tag.find_or_create_by(name: tag_name.strip)
+        tags.map do |tag_name|
+          tag = Tag.find_or_create_by(name: tag_name)
           TagsPost.find_or_create_by(tag_id: tag.id, post_id: @post.id)
         end
         redirect_to @post
