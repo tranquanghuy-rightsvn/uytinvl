@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <%= link_to image_tag("logo-1.png"), root_path, class: "navbar-brand logo" %> 
+    <%= link_to image_tag("logo-1.png"), root_path, class: "navbar-brand logo" %>
     <div class="navbar-right">
       <% if user_signed_in? %>
         <div class="custom-nav">
@@ -20,7 +20,7 @@
               <div class="mt-15">
                 <li class="confirm-notification">
                   <h4 class="ml-15">Thông báo mới</h4>
-                  <a class="mr-15">Xem tất cả</a>
+                  <%= link_to "Xem tất cả", notifications_path, class: "mr-15" %>
                 </li>
               </div>
               <li><hr class="dropdown-divider"></li>
