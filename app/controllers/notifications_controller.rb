@@ -1,6 +1,16 @@
 class NotificationsController < ApplicationController
   before_action :check_current_user
-  before_action :set_notification
+  before_action :set_notification, only: :update
+
+  def index
+    if params[:tab].blank?
+      @notifications = current_user.notifications.newest.page(params[:page]).per(20)
+    elsif params[:tab] == "unread"
+      @notifications = current_user.notifications.not_seen.newest.page(params[:page]).per(20)
+    else
+      redirect_to notifications_path
+    end
+  end
 
   def update
     unless @noti.seen
@@ -15,6 +25,14 @@ class NotificationsController < ApplicationController
     when "welcome"
       redirect_to root_path
     end
+  end
+
+  def mark_as_read_all
+    current_user.notifications.not_seen.each do |noti|
+      noti.update seen: true
+    end
+
+    redirect_to notifications_path
   end
 
   private

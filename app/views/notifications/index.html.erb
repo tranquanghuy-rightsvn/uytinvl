@@ -1,0 +1,33 @@
+<div class="container list-notification">
+  <div class="list-noti-header">
+    <div class="noti-title">
+      <h2>Thông báo</h2>
+      <div class="dropdown">
+        <a href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-ellipsis-h color-bl"></i>
+        </a>
+        <ul class="dropdown-menu custom-inset" aria-labelledby="dropdownMenuLink">
+          <li>
+            <%= link_to "Đánh dấu tất cả đã đọc", mark_as_read_all_notifications_path, class: "dropdown-item" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <%= link_to "<span class='noti-tab #{current_tab("all")}'>Tất cả</span>".html_safe, notifications_path %>
+    <%= link_to "<span class='noti-tab #{current_tab("unread")}'>Chưa đọc</span>".html_safe, notifications_path(tab: :unread) %>
+  </div>
+  <% @notifications.map do |notification| %>
+    <%= render "notifications/#{notification.key}.html.erb", notification: notification %>
+  <% end  %>
+
+  <%= paginate @notifications, theme: 'bootstrap-5',
+                   pagination_class: "pagination-sm flex-wrap justify-content-center",
+                   nav_class: "d-inline-block mt-20 mb-20" %>
+
+  <% if @notifications.blank? %>
+    <div class="bell-no-noti">
+      <span class="fa fa-bell text-center"></span>
+    </div>
+    <h3 class="text-center">Bạn không có thông báo nào </h3>
+  <% end %>
+</div>

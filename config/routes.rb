@@ -8,13 +8,17 @@ Rails.application.routes.draw do
       post :invite
       post :confirm_invite
     end
-  end 
-  resource :users, only: %i[edit update] do 
+  end
+  resource :users, only: %i[edit update] do
     collection do
       patch :change_password
     end
   end
-  resources :notifications, only: :update
+  resources :notifications, only: [:update, :index] do
+    collection do
+      get :mark_as_read_all
+    end
+  end
   resources :comments, only: %i[create update destroy]
 
 
@@ -23,7 +27,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  namespace :admin do 
+  namespace :admin do
     root to: "home#index"
     resources :categories
   end

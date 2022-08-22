@@ -706,6 +706,7 @@ p.mini-font{
 li.dropdown-item-custom{
   margin-bottom: 0px;
   cursor: pointer;
+  list-style: none;
 }
 
 li.dropdown-item-custom:hover{
@@ -719,6 +720,61 @@ li.user-profile p{
 
 ul.ul-notification li{
   color: #000;
+}
+
+.list-notification {
+  position: relative;
+  padding-top: 100px;
+}
+
+.list-noti-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-notification li.dropdown-item-custom{
+  color: #000;
+}
+
+.list-notification h2{
+  margin-bottom: 20px;
+}
+
+.list-notification ul.custom-inset {
+  width: 200px !important;
+  inset: 0 auto auto -180px !important;
+}
+
+.noti-tab {
+  padding: 10px 10px;
+  height: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #000;
+}
+
+.noti-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bell-no-noti {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.bell-no-noti .fa-bell {
+  width: 150px;
+  height: 150px;
+}
+
+.current-tab {
+  background: #e8e8e8;
+  border-radius: 12px;
+  color: #1877f2;
 }
 
 .avatar-channel{
