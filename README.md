@@ -1,4 +1,5 @@
 # README
+This project includes the following features:
 
 - Sign up/Login: You can easily create an account and log in to our platform. You can also change your password and manage your account information, including your profile settings.
 
@@ -15,3 +16,5 @@
 - Trending posts: See what's popular on our platform with our trending posts feature.
 
 - Tag cards: Use tag cards to help categorize and organize your content.
+
+And some other features will be developed in the future!
